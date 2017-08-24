@@ -12,6 +12,7 @@
     Height="650"
     Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="{StaticResource MaterialDesignFont}"
+    Icon="Images\Logo.png"
     ResizeMode="NoResize"
     TextElement.FontSize="13"
     TextElement.FontWeight="Regular"
@@ -49,6 +50,7 @@
                             MinWidth="200"
                             MinHeight="40"
                             HorizontalAlignment="Left"
+                            Click="btnHome_Click"
                             Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
                             CommandParameter="{x:Static Dock.Left}"
                             Opacity="100"
@@ -56,14 +58,15 @@
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Home</TextBlock>
                         </Button>
                         <Button
-                            x:Name="btnInventory"
+                            x:Name="btnForm1"
                             MinWidth="200"
                             MinHeight="40"
                             HorizontalAlignment="Left"
+                            Click="btnForm1_Click"
                             Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
                             CommandParameter="{x:Static Dock.Left}"
                             Style="{DynamicResource MaterialDesignFlatButton}">
-                            Inventory
+                            Form1
                         </Button>
                         <Button
                             x:Name="btnPurchase"
@@ -156,14 +159,6 @@
             </materialDesign:ColorZone>
         </DockPanel>
 
-        <!--<Grid
-            VerticalAlignment="Bottom">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <wp:Admin x:Name="wpAdmin" Visibility="Hidden" />
-        </Grid>-->
-
+        
     </Grid>
 </Window>

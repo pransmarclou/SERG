@@ -23,6 +23,40 @@ namespace SERG
         public MainWindow()
         {
             InitializeComponent();
+            InitializeAllUserControl();
         }
+
+        public void InitializeAllUserControl()
+        {
+            this.lstDockLeft.SelectedIndex = 0;
+            cntControl.Content = new Home();
+
+            this.btnHome.IsEnabled = true;
+            this.btnForm1.IsEnabled = true;
+            this.btnPurchase.IsEnabled = true;
+            this.btnSell.IsEnabled = true;
+            this.btnSellReport.IsEnabled = true;
+
+            this.txbTitle.Text = "Home";
+
+        }
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeAllUserControl();
+            this.lstDockLeft.SelectedIndex = 0;
+            cntControl.Content = new Home();
+            this.btnHome.IsEnabled = false;
+            this.txbTitle.Text = "Home";
+        }
+        private void btnForm1_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeAllUserControl();
+            cntControl.Content = new Form1();
+            this.lstDockLeft.SelectedIndex = 1;
+            this.btnForm1.IsEnabled = false;
+            this.txbTitle.Text = "Form1";
+        }
+
+      
     }
 }

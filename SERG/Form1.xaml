@@ -1,0 +1,186 @@
+﻿<UserControl
+    x:Class="SERG.Form1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SERG"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="830"
+    Height="570"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+    TextElement.FontSize="14"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    mc:Ignorable="d">
+
+
+    <!--  A PROGRAM CREATED BY FHRANZ ALIMORONG  -->
+    <!--  Project (Inventory System) for COE181P  -->
+    <!--  (c) June 2017  -->
+
+
+    <Grid Background="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.15*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Image
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            Margin="-16,36,596,179"
+            Source="Images/Logo.png"
+            Stretch="Uniform" />
+        <GroupBox
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="384,30,30,260"
+            Header="Room">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <RadioButton Content="Laboratory" />
+                    <RadioButton Content="Classroom" />
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <Label
+            Grid.Column="2"
+            Margin="26,36,446,24"
+            Content="Date Prepared: "
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <Label
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="26,71,446,274"
+            Content="Serial Number: "
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="176,66,295,279" />
+        <TextBox Grid.Column="2" Margin="176,31,295,29" />
+
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="26,10,549,240"
+            Content="Re: "
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="176,16,295,234" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="26,50,524,200"
+            Content="Room: "
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="176,91,295,159" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="26,96,480,154"
+            Content="Designation:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="176,56,295,194" />
+
+        <GroupBox
+            Grid.Row="1"
+            Grid.Column="2"
+            Height="Auto"
+            Margin="384,50,30,137"
+            Header="Action">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <CheckBox Content="Immediate Rectification" />
+                    <CheckBox Content="Inclusion in Safety Plan" />
+
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            Height="Auto"
+            Margin="52,175,446,165"
+            Header="Who is at risk">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <CheckBox Content="Faculty" />
+                    <CheckBox Content="Students" />
+                    <CheckBox Content="Lab Personnel and Cohorts" />
+                    <CheckBox Content="Equipment" />
+
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="192,175,314,75"
+            Content="Hazard:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="327,175,50,75" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="192,240,314,10"
+            Content="Severity:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="327,240,50,10" />
+        <Label
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Margin="52,65,524,90"
+            Content="Endorsement No. / Summary:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="103,65,50,75"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Height="Auto"
+            Margin="442,120,50,25"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            ToolTip="Resource name: MaterialDesignRaisedButton">
+            SUBMIT
+        </Button>
+    </Grid>
+</UserControl>
