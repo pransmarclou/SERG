@@ -16,9 +16,7 @@
     mc:Ignorable="d">
 
 
-    <!--  A PROGRAM CREATED BY FHRANZ ALIMORONG  -->
-    <!--  Project (Inventory System) for COE181P  -->
-    <!--  (c) June 2017  -->
+
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -89,56 +87,7 @@
                 <StackPanel Orientation="Horizontal" />
             </Grid>
         </ScrollViewer>
-        <!--<materialDesign:PopupBox
-            Grid.Row="1"
-            Margin="0,0,10,10"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}">
-            <StackPanel>
-                <Button Click="GitHubButton_OnClick" ToolTip="GitHub">
-                    <materialDesign:PackIcon
-                        Width="20"
-                        Height="20"
-                        Kind="GithubCircle" />
-                </Button>
-                <Button
-                    Background="{DynamicResource PrimaryHueMidBrush}"
-                    Click="TwitterButton_OnClick"
-                    Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
-                    ToolTip="Twitter">
-                    <materialDesign:PackIcon Kind="Twitter" />
-                </Button>
-                <Button >
-        -->
-        <!--  mix up the colours by brinking in a named palette (see merged dictionaries at top)  -->
-        <!--
-                    <Button.Background>
-                        <SolidColorBrush Color="{StaticResource GreenPrimary500}" />
-                    </Button.Background>
-                    <Button.Foreground>
-                        <SolidColorBrush Color="{StaticResource GreenPrimary500Foreground}" />
-                    </Button.Foreground>
-                    <materialDesign:PackIcon Kind="Message" />
-                </Button>
-                <Button
-                    Background="{DynamicResource SecondaryAccentBrush}"
-                    Click="EmailButton_OnClick"
-                    Foreground="{DynamicResource SecondaryAccentForegroundBrush}"
-                    ToolTip="Email">
-                    <materialDesign:PackIcon Kind="Email" />
-                </Button>
-                <Button Click="DonateButton_OnClick" ToolTip="Feel like you want to make a donation?  It would be gratefully received.  Click the button to donate via Pledgie.">
-                    <Button.Background>
-                        <SolidColorBrush Color="{StaticResource GreenPrimary200}" />
-                    </Button.Background>
-                    <Button.Foreground>
-                        <SolidColorBrush Color="{StaticResource GreenPrimary200Foreground}" />
-                    </Button.Foreground>
-                    <materialDesign:PackIcon Kind="Gift" />
-                </Button>
-            </StackPanel>
-        </materialDesign:PopupBox>-->
+
     </Grid>
 
 </UserControl>

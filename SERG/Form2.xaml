@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SERG"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="830"
     Height="570"
@@ -59,16 +60,15 @@
             FontSize="50" />
         <Label
             Grid.Row="1"
-            Grid.ColumnSpan="3"
-            Margin="70,240,506,10"
-            Content="Endorsement No. / Summary:"
+            Margin="80,205,48,45"
+            Content="Details:"
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
-            Grid.Row="1"
-            Grid.RowSpan="2"
+            x:Name="txtRemarks"
+            Grid.Row="2"
             Grid.Column="2"
-            Margin="123,240,30,140"
+            Margin="5,55,148,80"
             AcceptsReturn="True"
             TextWrapping="Wrap"
             VerticalScrollBarVisibility="Visible" />
@@ -170,10 +170,82 @@
             Grid.Column="2"
             Width="100"
             Height="40"
-            Margin="317,90,205,60"
+            Margin="502,85,20,65"
             Style="{StaticResource MaterialDesignRaisedButton}"
             ToolTip="Resource name: MaterialDesignRaisedButton">
             SUBMIT
         </Button>
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="237,205,305,45"
+            Content="Action:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <Label
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Margin="70,283,23,157"
+            Content="Prepared by:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            x:Name="txtPreparedTitle"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            Margin="190,276,545,164"
+            materialDesign:HintAssist.Hint="Title"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <Label
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="237,283,290,157"
+            Content="Noted by:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <Label
+            Grid.Row="2"
+            Margin="23,55,0,100"
+            Content="Remarks/Comments:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            x:Name="txtPreparedName"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="95,276,432,164"
+            materialDesign:HintAssist.Hint="Name"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox
+            x:Name="txtNotedTitle"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="337,276,190,164"
+            materialDesign:HintAssist.Hint="Title"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox
+            x:Name="txtNotedName"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="462,276,65,164"
+            materialDesign:HintAssist.Hint="Name"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <RichTextBox
+            x:Name="rtxtDetails"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="190,205,432,16"
+            Background="AntiqueWhite" />
+        <RichTextBox
+            x:Name="rtxtAction"
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="337,205,65,16"
+            Background="AntiqueWhite" />
     </Grid>
 </UserControl>
