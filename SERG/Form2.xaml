@@ -15,7 +15,7 @@
     mc:Ignorable="d">
 
 
- 
+
 
     <Grid Background="AntiqueWhite">
         <Grid.RowDefinitions>
@@ -76,7 +76,7 @@
             Grid.Row="1"
             Grid.ColumnSpan="3"
             Margin="175,41,555,95"
-            Header="Fire"
+            Header="Smoke"
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
@@ -91,7 +91,7 @@
             Grid.Row="1"
             Grid.Column="2"
             Margin="72,41,450,95"
-            Header="Fire"
+            Header="Bomb Threat"
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
@@ -106,7 +106,7 @@
             Grid.Row="1"
             Grid.Column="2"
             Margin="177,41,345,95"
-            Header="Fire"
+            Header="Earthquake"
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
@@ -121,7 +121,7 @@
             Grid.Row="1"
             Grid.Column="2"
             Margin="282,41,240,95"
-            Header="Fire"
+            Header="Protest"
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
@@ -136,7 +136,7 @@
             Grid.Row="1"
             Grid.Column="2"
             Margin="387,41,135,95"
-            Header="Fire"
+            Header="Tsunami"
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
@@ -151,7 +151,7 @@
             Grid.Row="1"
             Grid.Column="2"
             Margin="492,41,30,95"
-            Header="Fire"
+            Header="Typhoon"
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
