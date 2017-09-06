@@ -53,10 +53,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="High" />
-                    <CheckBox Content="Med" />
-                    <CheckBox Content="Low" />
-                    <CheckBox Content="N.A." />
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -90,10 +90,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="High" />
-                    <CheckBox Content="Med" />
-                    <CheckBox Content="Low" />
-                    <CheckBox Content="N.A." />
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -105,10 +105,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="High" />
-                    <CheckBox Content="Med" />
-                    <CheckBox Content="Low" />
-                    <CheckBox Content="N.A." />
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -120,10 +120,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="High" />
-                    <CheckBox Content="Med" />
-                    <CheckBox Content="Low" />
-                    <CheckBox Content="N.A." />
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -135,10 +135,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="High" />
-                    <CheckBox Content="Med" />
-                    <CheckBox Content="Low" />
-                    <CheckBox Content="N.A." />
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -150,10 +150,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="High" />
-                    <CheckBox Content="Med" />
-                    <CheckBox Content="Low" />
-                    <CheckBox Content="N.A." />
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -165,10 +165,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="High" />
-                    <CheckBox Content="Med" />
-                    <CheckBox Content="Low" />
-                    <CheckBox Content="N.A." />
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>

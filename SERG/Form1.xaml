@@ -184,6 +184,7 @@
             VerticalScrollBarVisibility="Visible" />
 
         <Button
+            x:Name="btnSubmit"
             Grid.Row="2"
             Grid.Column="2"
             Height="Auto"
