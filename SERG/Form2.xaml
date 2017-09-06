@@ -15,17 +15,7 @@
     mc:Ignorable="d">
 
 
-    <!--  A PROGRAM CREATED BY FHRANZ ALIMORONG  -->
-    <!--  Project (Inventory System) for COE181P  -->
-    <!--  (c) June 2017  -->
-
-
-    <UserControl.Resources>
-        <XmlDataProvider
-            x:Key="xmlInventory"
-            Source="Inventory.xml"
-            XPath="Inventory" />
-    </UserControl.Resources>
+ 
 
     <Grid Background="AntiqueWhite">
         <Grid.RowDefinitions>
