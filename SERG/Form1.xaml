@@ -46,8 +46,8 @@
             Header="Room">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <RadioButton Content="Laboratory" />
-                    <RadioButton Content="Classroom" />
+                    <RadioButton x:Name="rdbLaboratory" Content="Laboratory" />
+                    <RadioButton x:Name="rdbClassroom" Content="Classroom" />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -65,10 +65,14 @@
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
+            x:Name="txtSerialNumber"
             Grid.RowSpan="2"
             Grid.Column="2"
             Margin="176,66,295,279" />
-        <TextBox Grid.Column="2" Margin="176,31,295,29" />
+        <TextBox
+            x:Name="txtDatePrepared"
+            Grid.Column="2"
+            Margin="176,31,295,29" />
 
 
         <Label
@@ -79,6 +83,7 @@
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
+            x:Name="txtRe"
             Grid.Row="1"
             Grid.Column="2"
             Margin="176,16,295,234" />
@@ -90,6 +95,7 @@
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
+            x:Name="txtDesignation"
             Grid.Row="1"
             Grid.Column="2"
             Margin="176,91,295,159" />
@@ -101,6 +107,7 @@
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
+            x:Name="txtRoom"
             Grid.Row="1"
             Grid.Column="2"
             Margin="176,56,295,194" />
@@ -113,8 +120,8 @@
             Header="Action">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="Immediate Rectification" />
-                    <CheckBox Content="Inclusion in Safety Plan" />
+                    <CheckBox x:Name="chkImmRec" Content="Immediate Rectification" />
+                    <CheckBox x:Name="chkIncluSafety" Content="Inclusion in Safety Plan" />
 
                 </StackPanel>
             </GroupItem>
@@ -128,10 +135,10 @@
             Header="Who is at risk">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <CheckBox Content="Faculty" />
-                    <CheckBox Content="Students" />
-                    <CheckBox Content="Lab Personnel and Cohorts" />
-                    <CheckBox Content="Equipment" />
+                    <CheckBox x:Name="chkFaculty" Content="Faculty" />
+                    <CheckBox x:Name="chkStudents" Content="Students" />
+                    <CheckBox x:Name="chkLabPersonel" Content="Lab Personnel and Cohorts" />
+                    <CheckBox x:Name="chkEquipment" Content="Equipment" />
 
                 </StackPanel>
             </GroupItem>
@@ -144,6 +151,7 @@
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
+            x:Name="txtHazard"
             Grid.Row="1"
             Grid.Column="2"
             Margin="327,175,50,75" />
@@ -155,6 +163,7 @@
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
+            x:Name="txtSeverity"
             Grid.Row="1"
             Grid.Column="2"
             Margin="327,240,50,10" />
@@ -166,6 +175,7 @@
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
+            x:Name="txtEndorsement"
             Grid.Row="2"
             Grid.Column="2"
             Margin="103,65,50,75"

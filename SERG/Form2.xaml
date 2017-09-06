@@ -75,9 +75,10 @@
             FontFamily="Popcorn"
             FontSize="18" />
         <TextBox
-            Grid.Row="2"
+            Grid.Row="1"
+            Grid.RowSpan="2"
             Grid.Column="2"
-            Margin="103,65,50,30"
+            Margin="123,240,30,140"
             AcceptsReturn="True"
             TextWrapping="Wrap"
             VerticalScrollBarVisibility="Visible" />
@@ -173,5 +174,16 @@
         </GroupBox>
 
 
+        <Button
+            x:Name="btnSubmit"
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="100"
+            Height="40"
+            Margin="317,90,205,60"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            ToolTip="Resource name: MaterialDesignRaisedButton">
+            SUBMIT
+        </Button>
     </Grid>
 </UserControl>
