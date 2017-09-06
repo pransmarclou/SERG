@@ -69,35 +69,17 @@
                             Form1
                         </Button>
                         <Button
-                            x:Name="btnPurchase"
+                            x:Name="btnForm2"
                             MinWidth="200"
                             MinHeight="40"
                             HorizontalAlignment="Center"
+                            Click="btnForm2_Click"
                             Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
                             CommandParameter="{x:Static Dock.Left}"
                             Style="{DynamicResource MaterialDesignFlatButton}">
-                            Purchase
+                            Risk Evaluation
                         </Button>
-                        <Button
-                            x:Name="btnSell"
-                            MinWidth="200"
-                            MinHeight="40"
-                            HorizontalAlignment="Center"
-                            Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
-                            CommandParameter="{x:Static Dock.Left}"
-                            Style="{DynamicResource MaterialDesignFlatButton}">
-                            Sell
-                        </Button>
-                        <Button
-                            x:Name="btnSellReport"
-                            MinWidth="200"
-                            MinHeight="40"
-                            HorizontalAlignment="Center"
-                            Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
-                            CommandParameter="{x:Static Dock.Left}"
-                            Style="{DynamicResource MaterialDesignFlatButton}">
-                            Sell Report
-                        </Button>
+
                         <Button
                             x:Name="btnClose"
                             MinWidth="200"
@@ -159,6 +141,6 @@
             </materialDesign:ColorZone>
         </DockPanel>
 
-        
+
     </Grid>
 </Window>

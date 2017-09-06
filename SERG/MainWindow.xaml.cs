@@ -33,9 +33,8 @@ namespace SERG
 
             this.btnHome.IsEnabled = true;
             this.btnForm1.IsEnabled = true;
-            this.btnPurchase.IsEnabled = true;
-            this.btnSell.IsEnabled = true;
-            this.btnSellReport.IsEnabled = true;
+            this.btnForm2.IsEnabled = true;
+          
 
             this.txbTitle.Text = "Home";
 
@@ -57,6 +56,13 @@ namespace SERG
             this.txbTitle.Text = "Form1";
         }
 
-      
+        private void btnForm2_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeAllUserControl();
+            cntControl.Content = new Form2();
+            this.lstDockLeft.SelectedIndex = 2;
+            this.btnForm2.IsEnabled = false;
+            this.txbTitle.Text = "Risk Evaluation";
+        }
     }
 }
