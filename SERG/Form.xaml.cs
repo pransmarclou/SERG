@@ -184,7 +184,7 @@ namespace SERG
 
 
 
-                wordDoc.SaveAs2(dialog.SelectedPath + SerialNumber.Text);
+                wordDoc.SaveAs2(dialog.SelectedPath + "//" + SerialNumber.Text + ".docx"); 
                 wordDoc.Close();
                 wordApp.Quit();
                 
