@@ -8,6 +8,8 @@ using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
 using MahApps.Metro.Controls;
 using Microsoft.Office.Interop.Word;
+using System.Windows.Forms;
+using System.Windows.Documents;
 
 namespace SERG
 {
@@ -31,7 +33,7 @@ namespace SERG
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
             }
         }
 
@@ -57,12 +59,22 @@ namespace SERG
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult question = MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult question = System.Windows.MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(question == MessageBoxResult.Yes)
             {
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-                Document wordDoc = wordApp.Documents.Add(@"..\template.docx");
+                string filepath = Environment.CurrentDirectory + @"\template.docx";
+                Document wordDoc = wordApp.Documents.Open(@"C:\Users\RENZ\Desktop\ConsoleApplication1\ConsoleApplication1\template.docx");
                 wordDoc.Activate();
+
+                var dialog = new System.Windows.Forms.FolderBrowserDialog();
+                //Set default directory to the desktop.
+                dialog.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                dialog.Description = "Please choose the folder where the file will be saved (default location is the desktop)";
+                dialog.RootFolder = Environment.SpecialFolder.Personal;
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                
+                
 
                 //Create ranges for the bookmarks.
                 Range Date = wordDoc.Bookmarks["Date"].Range;
@@ -114,12 +126,65 @@ namespace SERG
                 Range Noted_Title = wordDoc.Bookmarks["Noted_Title"].Range;
                 Range LabOrRoom = wordDoc.Bookmarks["LabOrRoom"].Range;
 
-                RiskEval_Bomb_High.Text = "☐";  // USE FOR UNCHECKED TEXTBOX
-                RiskEval_Earthquake_High.Text = "☒"; // USE FOR CHECKED TEXTBOX
+                // Assign the values according to user input
+                Date.Text = txtDatePrepared.Text;
+                SerialNumber.Text = txtSerialNumber.Text;
+                RE.Text = txtRe.Text;
+
+                if ((bool)chkImmRec.IsChecked)
+                    Action_Immediate.Text = "☒";
+                else
+                    Action_Immediate.Text = "☐";
+
+                if ((bool)chkIncluSafety.IsChecked)
+                    Action_Inclusion.Text = "☒";
+                else
+                    Action_Inclusion.Text = "☐";
+
+                Room.Text = txtRoom.Text;
+                Hazard.Text = txtHazard.Text;
+                Designation.Text = txtDesignation.Text;
+
+                if ((bool)chkFaculty.IsChecked)
+                    AtRisk_Faculty.Text = "☒";
+                else
+                    AtRisk_Faculty.Text = "☐";
+
+                if ((bool)chkStudents.IsChecked)
+                    AtRisk_Students.Text = "☒";
+                else
+                    AtRisk_Students.Text = "☐";
+
+                if ((bool)chkLabPersonel.IsChecked)
+                    AtRisk_Lab.Text = "☒";
+                else
+                    AtRisk_Lab.Text = "☐";
+
+                if ((bool)chkEquipment.IsChecked)
+                    AtRisk_Equipment.Text = "☒";
+                else
+                    AtRisk_Equipment.Text = "☐";
+
+                Severity.Text = txtSeverity.Text;
+                EndorsementNumber.Text = txtEndorsement.Text;
+
+                //ADD THE RISK EVAL RESULTS LATER
+
+                Details.Text = new TextRange(rtxtDetails.Document.ContentStart, rtxtDetails.Document.ContentEnd).Text;
+                Action.Text = new TextRange(rtxtAction.Document.ContentStart, rtxtAction.Document.ContentEnd).Text;
+                Prep_Name.Text = txtPreparedName.Text;
+                Prep_Title.Text = txtPreparedTitle.Text;
+                Noted_Name.Text = txtNotedName.Text;
+                Noted_Title.Text = txtNotedTitle.Text;
+                
+                //ADD THE LAB OR ROOM TEXT;
+
+                //RiskEval_Bomb_High.Text = "☐";  // USE FOR UNCHECKED TEXTBOX
+                //RiskEval_Earthquake_High.Text = "☒"; // USE FOR CHECKED TEXTBOX
 
 
 
-                wordDoc.SaveAs2(@"C:\Users\seminar\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\SERGFinal.docx");
+                wordDoc.SaveAs2(dialog.SelectedPath);
                 wordDoc.Close();
                 wordApp.Quit();
 
