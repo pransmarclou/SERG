@@ -13,13 +13,14 @@ namespace SERG
     /// <summary>
     /// Interaction logic for Invetorys.xaml
     /// </summary>
-    public partial class Form2
+    public partial class Update
     {
-       
 
-     
+        private Form Form = new Form();
 
-        public Form2()
+
+
+        public Update()
         {
             InitializeComponent();
 
@@ -27,6 +28,7 @@ namespace SERG
             {
                
                 InitializeMaterialDesign();
+               
             }
             catch (System.Exception ex)
             {
@@ -43,7 +45,41 @@ namespace SERG
             var card = new Card();
             var hue = new Hue("Dummy", Colors.Black, Colors.White);
         }
+
        
 
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Form = new Form();
+                Form.Show();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+              
+            }
+            
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Form = new Form();
+                Form.Show();
+                Form.txtSerialNumber.IsEnabled = false;
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+      
+           
+        }
     }
 }
