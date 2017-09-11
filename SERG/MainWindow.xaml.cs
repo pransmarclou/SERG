@@ -33,8 +33,7 @@ namespace SERG
             cntControl.Content = new Home();
 
             this.btnHome.IsEnabled = true;
-            this.btnForm1.IsEnabled = true;
-            this.btnForm2.IsEnabled = true;
+         
            
           
 
@@ -49,23 +48,7 @@ namespace SERG
             this.btnHome.IsEnabled = false;
             this.txbTitle.Text = "Home";
         }
-        private void btnForm1_Click(object sender, RoutedEventArgs e)
-        {
-            InitializeAllUserControl();
-            cntControl.Content = new Form1();
-            this.lstDockLeft.SelectedIndex = 1;
-            this.btnForm1.IsEnabled = false;
-            this.txbTitle.Text = "Form1";
-        }
-
-        public void btnForm2_Click(object sender, RoutedEventArgs e)
-        {
-            InitializeAllUserControl();
-            cntControl.Content = new Form();
-            this.lstDockLeft.SelectedIndex = 2;
-            this.btnForm2.IsEnabled = false;
-            this.txbTitle.Text = "Risk Evaluation";
-        }
+      
 
         public void Form1()
         {
