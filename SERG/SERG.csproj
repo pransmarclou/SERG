@@ -140,6 +140,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Word\template.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
