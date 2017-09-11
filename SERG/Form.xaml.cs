@@ -119,7 +119,7 @@ namespace SERG
 
 
 
-                wordDoc.SaveAs2(@"Word\new.docx");
+                wordDoc.SaveAs2(@"C:\Users\fhranz\documents\visual studio 2015\Projects\SERG\SERG\Word\newtemplate.docx");
                 wordDoc.Close();
                 wordApp.Quit();
 
