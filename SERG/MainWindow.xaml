@@ -8,8 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:wp="clr-namespace:SERG"
     Title="Safety Engineers Report Generator"
-    Width="850"
-    Height="650"
+    Width="900"
+    Height="700"
     Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="{StaticResource MaterialDesignFont}"
     Icon="Images\Logo.png"
@@ -119,18 +119,7 @@
                         x:Name="MenuToggleButton"
                         IsChecked="False"
                         Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
-                    <materialDesign:PopupBox
-                        DockPanel.Dock="Right"
-                        PlacementMode="BottomAndAlignRightEdges"
-                        StaysOpen="False">
-                        <StackPanel>
-                            <Button Content="About Us" />
-                            <Button Content="Nice Popup" />
-                            <Button Content="Version 2.0" IsEnabled="False" />
-                            <Separator />
-                            <Button Content="Goodbye" />
-                        </StackPanel>
-                    </materialDesign:PopupBox>
+
                     <TextBlock
                         x:Name="txbTitle"
                         HorizontalAlignment="Center"

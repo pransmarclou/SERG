@@ -39,7 +39,7 @@
 
         <GroupBox
             Grid.Row="1"
-            Margin="70,41,38,95"
+            Margin="60,41,48,95"
             Header="Fire"
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
@@ -198,14 +198,6 @@
             materialDesign:HintAssist.Hint="Title"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         <Label
-            Grid.Row="1"
-            Grid.RowSpan="2"
-            Grid.Column="2"
-            Margin="237,283,290,157"
-            Content="Noted by:"
-            FontFamily="Popcorn"
-            FontSize="18" />
-        <Label
             Grid.Row="2"
             Margin="23,55,0,100"
             Content="Remarks/Comments:"
@@ -217,22 +209,6 @@
             Grid.RowSpan="2"
             Grid.Column="2"
             Margin="95,276,432,164"
-            materialDesign:HintAssist.Hint="Name"
-            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-        <TextBox
-            x:Name="txtNotedTitle"
-            Grid.Row="1"
-            Grid.RowSpan="2"
-            Grid.Column="2"
-            Margin="337,276,190,164"
-            materialDesign:HintAssist.Hint="Title"
-            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-        <TextBox
-            x:Name="txtNotedName"
-            Grid.Row="1"
-            Grid.RowSpan="2"
-            Grid.Column="2"
-            Margin="462,276,65,164"
             materialDesign:HintAssist.Hint="Name"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         <RichTextBox

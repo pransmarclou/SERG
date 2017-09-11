@@ -1,0 +1,362 @@
+﻿<Window
+    x:Class="SERG.Form"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SERG"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="900"
+    Height="620"
+    AllowDrop="True"
+    Background="{DynamicResource MaterialDesignPaper}"
+    BorderBrush="Bisque"
+    BorderThickness="2"
+    FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+    ResizeMode="NoResize"
+    ScrollViewer.VerticalScrollBarVisibility="Auto"
+    TextElement.FontSize="14"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+
+
+    <Grid Background="FloralWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.15*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Button
+            x:Name="btnCloseWindow"
+            Grid.Row="0"
+            Grid.Column="2"
+            Width="30"
+            Height="30"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnCloseWindow_Click"
+            Opacity="0" Margin="641,0,0,0" />
+        <materialDesign:PackIcon
+            Grid.Row="0"
+            Grid.Column="2"
+            Width="26"
+            Height="25"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Kind="WindowClose" />
+        <TextBox
+            x:Name="txtSerialNumber"
+            Grid.ColumnSpan="3"
+            Margin="176,35,575,33"
+            materialDesign:HintAssist.Hint="Serial Number"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox
+            x:Name="txtDatePrepared"
+            Margin="29,35,69,33"
+            materialDesign:HintAssist.Hint="Date Prepared"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+        <ComboBox
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="174,22,571,259"
+            materialDesign:HintAssist.Hint="Room">
+            <ComboBoxItem>Laboratory</ComboBoxItem>
+            <ComboBoxItem>Classroom</ComboBoxItem>
+        </ComboBox>
+        <TextBox
+            x:Name="txtRe"
+            Grid.RowSpan="2"
+            Margin="29,68,70,303"
+            materialDesign:HintAssist.Hint="Re"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox
+            x:Name="txtDesignation"
+            Grid.Row="1"
+            Margin="28,9,70,263"
+            materialDesign:HintAssist.Hint="Designation"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox
+            x:Name="txtRoom"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            Margin="176,69,574,303"
+            materialDesign:HintAssist.Hint="Room"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+        <GroupBox
+            Grid.Row="1"
+            Grid.Column="2"
+            Height="Auto"
+            Margin="420,75,40,143"
+            Header="Action">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <CheckBox x:Name="chkImmRec" Content="Immediate Rectification" />
+                    <CheckBox x:Name="chkIncluSafety" Content="Inclusion in Safety Plan" />
+
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <GroupBox
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Height="Auto"
+            Margin="420,35,42,248"
+            Header="Who is at risk">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <CheckBox x:Name="chkFaculty" Content="Faculty" />
+                    <CheckBox x:Name="chkStudents" Content="Students" />
+                    <CheckBox x:Name="chkLabPersonel" Content="Lab Personnel and Cohorts" />
+                    <CheckBox x:Name="chkEquipment" Content="Equipment" />
+
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <TextBox
+            x:Name="txtHazard"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="27,98,590,173"
+            materialDesign:HintAssist.Hint="Hazard"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox
+            x:Name="txtSeverity"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="27,57,593,214"
+            materialDesign:HintAssist.Hint="Severity"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            TextChanged="txtSeverity_TextChanged" />
+        <TextBox
+            x:Name="txtEndorsement"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="24,142,396,108"
+            materialDesign:HintAssist.Hint="Endorsement No./Summary"
+            AcceptsReturn="True"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+
+        <Button
+            x:Name="btnSubmit"
+            Grid.Row="2"
+            Grid.Column="2"
+            Height="Auto"
+            Margin="447,122,45,23"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            ToolTip="Resource name: MaterialDesignRaisedButton">
+            SUBMIT
+        </Button>
+        <TextBox
+            x:Name="txtRemarks"
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Margin="31,110,330,25"
+            materialDesign:HintAssist.Hint="Remarks/Comments"
+            AcceptsReturn="True"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Margin="20,256,130,131"
+            Header="Fire"
+            Style="{DynamicResource MaterialDesignGroupBox}">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Margin="100,255,45,131"
+            Header="Smoke"
+            Style="{DynamicResource MaterialDesignGroupBox}">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            Margin="185,255,614,131"
+            Header="Bomb Threat"
+            Style="{DynamicResource MaterialDesignGroupBox}">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="66,255,516,131"
+            Header="Earthquake"
+            Style="{DynamicResource MaterialDesignGroupBox}">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="165,256,427,131"
+            Header="Protest"
+            Style="{DynamicResource MaterialDesignGroupBox}">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="253,256,342,130"
+            Header="Tsunami"
+            Style="{DynamicResource MaterialDesignGroupBox}">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <GroupBox
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="338,255,252,131"
+            Header="Typhoon"
+            Style="{DynamicResource MaterialDesignGroupBox}">
+            <GroupItem>
+                <StackPanel Height="Auto" Orientation="Vertical">
+                    <RadioButton Content="High" />
+                    <RadioButton Content="Med" />
+                    <RadioButton Content="Low" />
+                    <RadioButton Content="N.A." />
+                </StackPanel>
+            </GroupItem>
+        </GroupBox>
+        <Label
+            Grid.Column="2"
+            Margin="130,50,377,23"
+            Content="Prepared by:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            x:Name="txtPreparedTitle"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="145,76,420,297"
+            materialDesign:HintAssist.Hint="Title"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox
+            x:Name="txtPreparedName"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="265,81,300,297"
+            materialDesign:HintAssist.Hint="Name"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="129,22,398,248"
+            Content="Noted by:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <TextBox
+            x:Name="txtNotedTitle"
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="142,53,423,216"
+            materialDesign:HintAssist.Hint="Title"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox
+            x:Name="txtNotedName"
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="263,53,304,217"
+            materialDesign:HintAssist.Hint="Name"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="0,212,530,58"
+            Content="Risk Evaluation"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <RichTextBox
+            x:Name="rtxtDetails"
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="440,212,27,34"
+            Background="FloralWhite" 
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <RichTextBox
+            x:Name="rtxtAction"
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="440,17,25,126"
+            Background="FloralWhite"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="435,177,160,98"
+            Content="Details:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+        <Label
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Margin="440,292,155,190"
+            Content="Action:"
+            FontFamily="Popcorn"
+            FontSize="18" />
+    </Grid>
+</Window>
