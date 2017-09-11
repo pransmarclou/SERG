@@ -84,7 +84,8 @@
             Margin="44,223,51,194"
             Background="AntiqueWhite"
             BorderBrush="AntiqueWhite"
-            BorderThickness="1">
+            BorderThickness="1"
+            Click="btnEdit_Click">
             <Grid>
                 <Image
                     Height="60"

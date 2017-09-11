@@ -16,7 +16,7 @@ namespace SERG
     public partial class Update
     {
 
-        private Form addForm = new Form();
+        private Form Form = new Form();
 
 
 
@@ -28,6 +28,7 @@ namespace SERG
             {
                
                 InitializeMaterialDesign();
+               
             }
             catch (System.Exception ex)
             {
@@ -45,21 +46,40 @@ namespace SERG
             var hue = new Hue("Dummy", Colors.Black, Colors.White);
         }
 
+       
+
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    if (form.ShowDialog() == true)
-            //        throw new Exception("Add Form dialog, already opened!");
-            //     form.ShowDialog();
-            //}
-            //catch (Exception ex)
-            //{
+            try
+            {
+                Form = new Form();
+                Form.Show();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+              
+            }
+            
+        }
 
-            //    MessageBox.Show("Error: " + ex.Message, "Dialog Error",MessageBoxButton.OK,MessageBoxImage.Warning);
-            //}
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Form = new Form();
+                Form.Show();
+                Form.txtSerialNumber.IsEnabled = false;
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
 
-            addForm.ShowDialog();
+            }
+      
+           
         }
     }
 }

@@ -61,7 +61,7 @@ namespace SERG
             if(question == MessageBoxResult.Yes)
             {
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-                Document wordDoc = wordApp.Documents.Add(@"..\template.docx");
+                Document wordDoc = wordApp.Documents.Add(@"C:\Users\fhranz\documents\visual studio 2015\Projects\SERG\SERG\Word\template.docx");
                 wordDoc.Activate();
 
                 //Create ranges for the bookmarks.
@@ -119,7 +119,7 @@ namespace SERG
 
 
 
-                wordDoc.SaveAs2(@"C:\Users\seminar\Documents\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\SERGFinal.docx");
+                wordDoc.SaveAs2(@"Word\new.docx");
                 wordDoc.Close();
                 wordApp.Quit();
 
