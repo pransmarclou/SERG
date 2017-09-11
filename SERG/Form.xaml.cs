@@ -64,7 +64,7 @@ namespace SERG
             {
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
                 string filepath = Environment.CurrentDirectory + @"\template.docx";
-                Document wordDoc = wordApp.Documents.Open(@"C:\Users\RENZ\Desktop\ConsoleApplication1\ConsoleApplication1\template.docx");
+                Document wordDoc = wordApp.Documents.Open(filepath);
                 wordDoc.Activate();
 
                 var dialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -184,10 +184,10 @@ namespace SERG
 
 
 
-                wordDoc.SaveAs2(dialog.SelectedPath);
+                wordDoc.SaveAs2(dialog.SelectedPath + SerialNumber.Text);
                 wordDoc.Close();
                 wordApp.Quit();
-
+                
                 // rng.Text = "Adams Laura"; //Get value from any where      
             }
             else
