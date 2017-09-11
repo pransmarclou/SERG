@@ -157,7 +157,8 @@
             Height="Auto"
             Margin="447,122,45,23"
             Style="{StaticResource MaterialDesignRaisedButton}"
-            ToolTip="Resource name: MaterialDesignRaisedButton">
+            ToolTip="Resource name: MaterialDesignRaisedButton"
+            Click="btnSubmit_Click">
             SUBMIT
         </Button>
         <TextBox
