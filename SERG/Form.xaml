@@ -42,10 +42,11 @@
             Grid.Column="2"
             Width="30"
             Height="30"
+            Margin="641,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btnCloseWindow_Click"
-            Opacity="0" Margin="641,0,0,0" />
+            Opacity="0" />
         <materialDesign:PackIcon
             Grid.Row="0"
             Grid.Column="2"
@@ -71,8 +72,8 @@
             Grid.ColumnSpan="3"
             Margin="174,22,571,259"
             materialDesign:HintAssist.Hint="Room">
-            <ComboBoxItem>Laboratory</ComboBoxItem>
-            <ComboBoxItem>Classroom</ComboBoxItem>
+            <ComboBoxItem x:Name="cmbLab">Laboratory</ComboBoxItem>
+            <ComboBoxItem x:Name="cmbClass">Classroom</ComboBoxItem>
         </ComboBox>
         <TextBox
             x:Name="txtRe"
@@ -156,9 +157,9 @@
             Grid.Column="2"
             Height="Auto"
             Margin="447,122,45,23"
+            Click="btnSubmit_Click"
             Style="{StaticResource MaterialDesignRaisedButton}"
-            ToolTip="Resource name: MaterialDesignRaisedButton"
-            Click="btnSubmit_Click">
+            ToolTip="Resource name: MaterialDesignRaisedButton">
             SUBMIT
         </Button>
         <TextBox
@@ -180,10 +181,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <RadioButton Content="High" />
-                    <RadioButton Content="Med" />
-                    <RadioButton Content="Low" />
-                    <RadioButton Content="N.A." />
+                    <RadioButton x:Name="rdbRiskEval_Fire_High" Content="High" />
+                    <RadioButton x:Name="rdbRiskEval_Fire_Med" Content="Med" />
+                    <RadioButton x:Name="rdbRiskEval_Fire_Low" Content="Low" />
+                    <RadioButton x:Name="rdbRiskEval_Fire_NA" Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -195,10 +196,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <RadioButton Content="High" />
-                    <RadioButton Content="Med" />
-                    <RadioButton Content="Low" />
-                    <RadioButton Content="N.A." />
+                    <RadioButton x:Name="rdbRiskEval_Smoke_High" Content="High" />
+                    <RadioButton x:Name="rdbRiskEval_Smoke_Med" Content="Med" />
+                    <RadioButton x:Name="rdbRiskEval_Smoke_Low" Content="Low" />
+                    <RadioButton x:Name="rdbRiskEval_Smoke_NA" Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -211,10 +212,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <RadioButton Content="High" />
-                    <RadioButton Content="Med" />
-                    <RadioButton Content="Low" />
-                    <RadioButton Content="N.A." />
+                    <RadioButton x:Name="rdbRiskEval_Bomb_High" Content="High" />
+                    <RadioButton x:Name="rdbRiskEval_Bomb_Med" Content="Med" />
+                    <RadioButton x:Name="rdbRiskEval_Bomb_Low" Content="Low" />
+                    <RadioButton x:Name="rdbRiskEval_Bomb_NA" Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -227,10 +228,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <RadioButton Content="High" />
-                    <RadioButton Content="Med" />
-                    <RadioButton Content="Low" />
-                    <RadioButton Content="N.A." />
+                    <RadioButton x:Name="rdbRiskEval_Earthquake_High" Content="High" />
+                    <RadioButton x:Name="rdbRiskEval_Earthquake_Med" Content="Med" />
+                    <RadioButton x:Name="rdbRiskEval_Earthquake_Low" Content="Low" />
+                    <RadioButton x:Name="rdbRiskEval_Earthquake_NA" Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -243,10 +244,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <RadioButton Content="High" />
-                    <RadioButton Content="Med" />
-                    <RadioButton Content="Low" />
-                    <RadioButton Content="N.A." />
+                    <RadioButton x:Name="rdbRiskEval_Protest_High" Content="High" />
+                    <RadioButton x:Name="rdbRiskEval_Protest_Med" Content="Med" />
+                    <RadioButton x:Name="rdbRiskEval_Protest_Low" Content="Low" />
+                    <RadioButton x:Name="rdbRiskEval_Protest_NA" Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -259,10 +260,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <RadioButton Content="High" />
-                    <RadioButton Content="Med" />
-                    <RadioButton Content="Low" />
-                    <RadioButton Content="N.A." />
+                    <RadioButton x:Name="rdbRiskEval_Tsunami_High" Content="High" />
+                    <RadioButton x:Name="rdbRiskEval_Tsunami_Med" Content="Med" />
+                    <RadioButton x:Name="rdbRiskEval_Tsunami_Low" Content="Low" />
+                    <RadioButton x:Name="rdbRiskEval_Tsunami_NA" Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -275,10 +276,10 @@
             Style="{DynamicResource MaterialDesignGroupBox}">
             <GroupItem>
                 <StackPanel Height="Auto" Orientation="Vertical">
-                    <RadioButton Content="High" />
-                    <RadioButton Content="Med" />
-                    <RadioButton Content="Low" />
-                    <RadioButton Content="N.A." />
+                    <RadioButton x:Name="rdbRiskEval_Typhoon_High" Content="High" />
+                    <RadioButton x:Name="rdbRiskEval_Typhoon_Med" Content="Med" />
+                    <RadioButton x:Name="rdbRiskEval_Typhoon_Low" Content="Low" />
+                    <RadioButton x:Name="rdbRiskEval_Typhoon_NA" Content="N.A." />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -335,8 +336,8 @@
             Grid.Row="1"
             Grid.Column="2"
             Margin="440,212,27,34"
-            Background="FloralWhite" 
-                        ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+            Background="FloralWhite"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto" />
         <RichTextBox
             x:Name="rtxtAction"
             Grid.Row="2"
