@@ -20,8 +20,6 @@ namespace SERG
     {
        
 
-     
-
         public Form()
         {
             InitializeComponent();
