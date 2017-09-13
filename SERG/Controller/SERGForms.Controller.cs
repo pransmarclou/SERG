@@ -60,6 +60,7 @@ namespace SERG.Controller
         //@tNoted varchar(10),
         //@namePrep varchar(50),
         //@nameNoted varchar(50),
+        //@remarks varchar(70),
 
         private string riskEvaluation;
 
@@ -84,6 +85,8 @@ namespace SERG.Controller
         private string titleNotedBy;
 
         private string nameNotedBy;
+
+        private string remarks;
         #endregion
 
 
@@ -146,6 +149,7 @@ namespace SERG.Controller
             string namePB,
             string titleNB,
             string nameNB,
+            string rem,
 
             //whoisatrisk
             bool isFac,
@@ -185,6 +189,7 @@ namespace SERG.Controller
             namePreparedBy = namePB;
             titleNotedBy = titleNB;
             nameNotedBy = nameNB;
+            remarks = rem;
 
             //whoisatrisk
             isFaculty = isFac;
@@ -222,6 +227,7 @@ namespace SERG.Controller
                     sq_command.Parameters.Add("tNoted", SqlDbType.VarChar).Value = titleNotedBy;
                     sq_command.Parameters.Add("namePrep", SqlDbType.VarChar).Value = namePreparedBy;
                     sq_command.Parameters.Add("nameNoted", SqlDbType.VarChar).Value = nameNotedBy;
+                    sq_command.Parameters.Add("remarks", SqlDbType.VarChar).Value = remarks;
 
                     sq_command.Parameters.Add("fireEval", SqlDbType.SmallInt).Value = fireEval;
                     sq_command.Parameters.Add("smokeEval", SqlDbType.SmallInt).Value = smokeEval;

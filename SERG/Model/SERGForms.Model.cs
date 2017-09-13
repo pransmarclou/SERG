@@ -79,6 +79,8 @@ namespace SERG.Model
         private string titleNotedBy { get; set; }
 
         private string nameNotedBy { get; set; }
+
+        private string remarks { get; set; }
         #endregion
 
 
@@ -148,6 +150,7 @@ namespace SERG.Model
             string namePB,
             string titleNB,
             string nameNB,
+            string rem,
 
             //whoisatrisk
             bool isFac,
@@ -186,6 +189,7 @@ namespace SERG.Model
             namePreparedBy = namePB;
             titleNotedBy = titleNB;
             nameNotedBy = nameNB;
+            remarks = rem;
 
             //whoisatrisk
             isFaculty = isFac;
@@ -201,7 +205,7 @@ namespace SERG.Model
             
             if(funcType == 0)
             {
-                Controller.SERGForms objController = new Controller.SERGForms(funcType, serialNum, fireEval, smokeEval, bombThreatEval, earthquakeEval, protestEval, tsunamiEval, typhoonEval, riskEvaluation, room, designation, hazard, severity, endorsementNum, labOrRoom, prepDate, titlePreparedBy, namePreparedBy, titleNotedBy, nameNotedBy, isFaculty, isStudents, isPersonnel, isEquipment, abRectification, abSafetyPlan, actionVal, detailVal);
+                Controller.SERGForms objController = new Controller.SERGForms(funcType, serialNum, fireEval, smokeEval, bombThreatEval, earthquakeEval, protestEval, tsunamiEval, typhoonEval, riskEvaluation, room, designation, hazard, severity, endorsementNum, labOrRoom, prepDate, titlePreparedBy, namePreparedBy, titleNotedBy, nameNotedBy, remarks, isFaculty, isStudents, isPersonnel, isEquipment, abRectification, abSafetyPlan, actionVal, detailVal);
 
                 objController.AddForm();
             }

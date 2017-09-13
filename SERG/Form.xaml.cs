@@ -215,6 +215,7 @@ namespace SERG
                     txtPreparedName.Text,
                     txtNotedTitle.Text,
                     txtNotedName.Text,
+                    txtRemarks.Text,
 
                     chkFaculty.IsChecked.Value,
                     chkStudents.IsChecked.Value,
