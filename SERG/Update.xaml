@@ -43,10 +43,10 @@
             AutoGenerateColumns="False"
             Background="AntiqueWhite">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="Auto" Header="Put Shits here" />
-                <DataGridTextColumn Width="Auto" Header="Holy sht" />
-                <DataGridTextColumn Width="Auto" Header="Nani" />
-                <DataGridTextColumn Width="Auto" Header="KrooKroo" />
+                <DataGridTextColumn Width="Auto" Header="Serial Number" />
+                <DataGridTextColumn Width="Auto" Header="Noted By" />
+                <DataGridTextColumn Width="Auto" Header="Prepared By" />
+                <DataGridTextColumn Width="Auto" Header="Date Prepared" />
             </DataGrid.Columns>
         </DataGrid>
         <Button

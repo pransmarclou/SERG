@@ -69,6 +69,7 @@
 
 
         <ComboBox
+            x:Name="cmbLabOrRoom"
             Grid.Row="1"
             Grid.ColumnSpan="3"
             Margin="174,22,571,259"

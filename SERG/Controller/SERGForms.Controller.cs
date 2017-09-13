@@ -90,6 +90,7 @@ namespace SERG.Controller
         #endregion
 
 
+
         #region WhoIsAtRisk
         //@isFaculty bit,
         //@isStudents bit,
@@ -261,7 +262,37 @@ namespace SERG.Controller
             }
         }
 
-       
+        public SERGForms()
+        {
+
+        }
+
+       public DataTable ShowToDataGrid()
+        {
+
+            DataTable existingData = new DataTable("SEReport");
+            try
+            {
+                SqlDataAdapter results = null;
+                using (SqlConnection sq_connect = new SqlConnection(cnString))
+                using (SqlCommand sq_command = new SqlCommand("ShowToDataGrid", sq_connect))
+                {
+                    sq_command.CommandType = CommandType.StoredProcedure;
+                    sq_connect.Open();
+
+                    results = new SqlDataAdapter(sq_command);
+                    results.Fill(existingData);
+                }
+
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The error is {ex}");
+            }
+
+            return existingData;
+        }
         
 
         ////riskeval
