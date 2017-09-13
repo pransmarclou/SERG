@@ -66,9 +66,10 @@
             Margin="29,35,69,33"
             materialDesign:HintAssist.Hint="Date Prepared"
             Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-        
+
 
         <ComboBox
+            x:Name="cmbLabOrRoom"
             Grid.Row="1"
             Grid.ColumnSpan="3"
             Margin="174,22,571,259"
@@ -93,7 +94,7 @@
             Grid.RowSpan="2"
             Grid.ColumnSpan="3"
             Margin="176,69,574,303"
-            materialDesign:HintAssist.Hint="Room"
+            materialDesign:HintAssist.Hint="Room Number"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
         <GroupBox
@@ -185,7 +186,10 @@
                     <RadioButton x:Name="rdbRiskEval_Fire_High" Content="High" />
                     <RadioButton x:Name="rdbRiskEval_Fire_Med" Content="Med" />
                     <RadioButton x:Name="rdbRiskEval_Fire_Low" Content="Low" />
-                    <RadioButton x:Name="rdbRiskEval_Fire_NA" Content="N.A." />
+                    <RadioButton
+                        x:Name="rdbRiskEval_Fire_NA"
+                        Content="N.A."
+                        IsChecked="True" />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -200,7 +204,10 @@
                     <RadioButton x:Name="rdbRiskEval_Smoke_High" Content="High" />
                     <RadioButton x:Name="rdbRiskEval_Smoke_Med" Content="Med" />
                     <RadioButton x:Name="rdbRiskEval_Smoke_Low" Content="Low" />
-                    <RadioButton x:Name="rdbRiskEval_Smoke_NA" Content="N.A." />
+                    <RadioButton
+                        x:Name="rdbRiskEval_Smoke_NA"
+                        Content="N.A."
+                        IsChecked="True" />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -216,7 +223,10 @@
                     <RadioButton x:Name="rdbRiskEval_Bomb_High" Content="High" />
                     <RadioButton x:Name="rdbRiskEval_Bomb_Med" Content="Med" />
                     <RadioButton x:Name="rdbRiskEval_Bomb_Low" Content="Low" />
-                    <RadioButton x:Name="rdbRiskEval_Bomb_NA" Content="N.A." />
+                    <RadioButton
+                        x:Name="rdbRiskEval_Bomb_NA"
+                        Content="N.A."
+                        IsChecked="True" />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -232,7 +242,10 @@
                     <RadioButton x:Name="rdbRiskEval_Earthquake_High" Content="High" />
                     <RadioButton x:Name="rdbRiskEval_Earthquake_Med" Content="Med" />
                     <RadioButton x:Name="rdbRiskEval_Earthquake_Low" Content="Low" />
-                    <RadioButton x:Name="rdbRiskEval_Earthquake_NA" Content="N.A." />
+                    <RadioButton
+                        x:Name="rdbRiskEval_Earthquake_NA"
+                        Content="N.A."
+                        IsChecked="True" />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -248,7 +261,10 @@
                     <RadioButton x:Name="rdbRiskEval_Protest_High" Content="High" />
                     <RadioButton x:Name="rdbRiskEval_Protest_Med" Content="Med" />
                     <RadioButton x:Name="rdbRiskEval_Protest_Low" Content="Low" />
-                    <RadioButton x:Name="rdbRiskEval_Protest_NA" Content="N.A." />
+                    <RadioButton
+                        x:Name="rdbRiskEval_Protest_NA"
+                        Content="N.A."
+                        IsChecked="True" />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -264,7 +280,10 @@
                     <RadioButton x:Name="rdbRiskEval_Tsunami_High" Content="High" />
                     <RadioButton x:Name="rdbRiskEval_Tsunami_Med" Content="Med" />
                     <RadioButton x:Name="rdbRiskEval_Tsunami_Low" Content="Low" />
-                    <RadioButton x:Name="rdbRiskEval_Tsunami_NA" Content="N.A." />
+                    <RadioButton
+                        x:Name="rdbRiskEval_Tsunami_NA"
+                        Content="N.A."
+                        IsChecked="True" />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -280,7 +299,10 @@
                     <RadioButton x:Name="rdbRiskEval_Typhoon_High" Content="High" />
                     <RadioButton x:Name="rdbRiskEval_Typhoon_Med" Content="Med" />
                     <RadioButton x:Name="rdbRiskEval_Typhoon_Low" Content="Low" />
-                    <RadioButton x:Name="rdbRiskEval_Typhoon_NA" Content="N.A." />
+                    <RadioButton
+                        x:Name="rdbRiskEval_Typhoon_NA"
+                        Content="N.A."
+                        IsChecked="True" />
                 </StackPanel>
             </GroupItem>
         </GroupBox>
@@ -301,7 +323,7 @@
             x:Name="txtPreparedName"
             Grid.RowSpan="2"
             Grid.Column="2"
-            Margin="265,81,300,297"
+            Margin="265,75,300,297"
             materialDesign:HintAssist.Hint="Name"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         <Label

@@ -10,6 +10,8 @@ using MahApps.Metro.Controls;
 using Microsoft.Office.Interop.Word;
 using System.Windows.Forms;
 using System.Windows.Documents;
+using System.Media;
+
 
 namespace SERG
 {
@@ -137,6 +139,39 @@ namespace SERG
             this.Close();
         }
 
+        private void CheckTextFields()
+        {
+            actVal = new TextRange(rtxtAction.Document.ContentStart, rtxtAction.Document.ContentEnd).Text;
+            detVal = new TextRange(rtxtDetails.Document.ContentStart, rtxtDetails.Document.ContentEnd).Text;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtDesignation.Text) && 
+                    string.IsNullOrWhiteSpace(txtEndorsement.Text) &&
+                    string.IsNullOrWhiteSpace(txtHazard.Text) &&
+                    string.IsNullOrWhiteSpace(txtNotedName.Text) &&
+                    string.IsNullOrWhiteSpace(txtNotedTitle.Text) &&
+                    string.IsNullOrWhiteSpace(txtPreparedName.Text) &&
+                    string.IsNullOrWhiteSpace(txtPreparedTitle.Text) &&
+                    string.IsNullOrWhiteSpace(txtRe.Text) && 
+                    string.IsNullOrWhiteSpace(txtRemarks.Text) &&
+                    string.IsNullOrWhiteSpace(txtRoom.Text) &&
+                    string.IsNullOrWhiteSpace(txtSerialNumber.Text) &&
+                    string.IsNullOrWhiteSpace(txtSeverity.Text) &&
+                    string.IsNullOrWhiteSpace(actVal) &&
+                    string.IsNullOrWhiteSpace(detVal) )
+                {
+                   throw new Exception("Please Complete The Required Details!");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                SystemSounds.Beep.Play();
+                System.Windows.MessageBox.Show("Error: " + ex.Message, "Empty TextFields", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
+        
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if (txtSerialNumber.IsEnabled == true)
