@@ -32,7 +32,7 @@ namespace SERG
 
         private void RiskEvalCheck(int type, bool high, bool med, bool low, bool none)
         {
-            if (high == true)
+            if (high == true) //0-high, 1-med, 2-low, 3-none
             {
                 if (type == 0)
                     fEval = 0;
@@ -192,6 +192,7 @@ namespace SERG
                 detVal = new TextRange(rtxtDetails.Document.ContentStart, rtxtDetails.Document.ContentEnd).Text;
 
                 Model.SERGForms objSModel = new SERG.Model.SERGForms(
+                    functionType,
                     txtSerialNumber.Text,
 
                     fEval,
@@ -223,18 +224,11 @@ namespace SERG
                     chkImmRec.IsChecked.Value,
                     chkIncluSafety.IsChecked.Value,
                     actVal,
-                    detVal
+                    detVal                 
+                    
 
                );
             }
-
-
-            #region Controller
-
-            
-            SERG.Controller.SERGForms objSController = new Controller.SERGForms(functionType);
-
-            #endregion
 
 
             MessageBoxResult question = System.Windows.MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);

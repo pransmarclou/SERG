@@ -13,6 +13,7 @@ namespace SERG.Model
 
 
         private string serialNum { get; set; }
+        private int funcType { get; set; }
 
         //Data RiskEval
         #region RiskEval
@@ -118,89 +119,14 @@ namespace SERG.Model
             serialNum = sNumber;
         }
 
+        
 
         public SERGForms(
+            
+            int functionType,
+            string sNumber,
+
             //riskeval
-            out string sNumber,
-            out short fEval,
-            out short sEval,
-            out short btEval,
-            out short eEval,
-            out short pEval,
-            out short tsuEval,
-            out short tyEval,
-
-            //sereport
-            out string rEval,
-            out string rm,
-            out string desig,
-            out string haz,
-            out string sev,
-            out string endNum,
-            out bool lOrR,
-            out DateTime prepD,
-            out string titlePB,
-            out string namePB,
-            out string titleNB,
-            out string nameNB,
-
-            //whoisatrisk
-            out bool isFac,
-            out bool isStud,
-            out bool isPer,
-            out bool isEquip,
-
-            //actionbox and otehrs
-            out bool abRec,
-            out bool abSafety,
-            out string actVal,
-            out string detVal)
-        {
-
-            sNumber = serialNum;
-
-            //risk eval
-            fEval = fireEval;
-            sEval = smokeEval;
-            btEval = bombThreatEval;
-            eEval = earthquakeEval;
-            pEval = protestEval;
-            tsuEval = tsunamiEval;
-            tyEval = typhoonEval;
-
-            //sereport
-            rEval = riskEvaluation;
-            rm = room;
-            desig = designation;
-            haz = hazard;
-            sev = severity;
-            endNum = endorsementNum;
-            lOrR = labOrRoom;
-            prepD = prepDate;
-            titlePB = titlePreparedBy;
-            namePB = namePreparedBy;
-            titleNB = titleNotedBy;
-            nameNB = nameNotedBy;
-
-            //whoisatrisk
-            isFac = isFaculty; 
-            isStud = isStudents;
-            isPer = isPersonnel;
-            isEquip = isEquipment;
-
-            //actionboxandothers
-            abRec = abRectification;
-            abSafety = abSafetyPlan;
-            actVal = actionVal;
-            detVal = detailVal;
-
-
-
-        }
-
-        public SERGForms(
-            //riskeval
-            string sNumber, 
             short fEval, 
             short sEval, 
             short btEval, 
@@ -235,7 +161,7 @@ namespace SERG.Model
             string actVal,
             string detVal )
         {
-
+            funcType = functionType;
             serialNum = sNumber;
 
             //risk eval
@@ -273,7 +199,12 @@ namespace SERG.Model
             actionVal = actVal;
             detailVal = detVal;
             
+            if(funcType == 0)
+            {
+                Controller.SERGForms objController = new Controller.SERGForms(funcType, serialNum, fireEval, smokeEval, bombThreatEval, earthquakeEval, protestEval, tsunamiEval, typhoonEval, riskEvaluation, room, designation, hazard, severity, endorsementNum, labOrRoom, prepDate, titlePreparedBy, namePreparedBy, titleNotedBy, nameNotedBy, isFaculty, isStudents, isPersonnel, isEquipment, abRectification, abSafetyPlan, actionVal, detailVal);
 
+                objController.AddForm();
+            }
 
         }
     }
