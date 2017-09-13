@@ -8,7 +8,6 @@ namespace SERG.Model
 {
     class SEReport
     {
-        private string  serialNum { get; set; }
         
     }
 }
