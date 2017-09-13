@@ -118,6 +118,86 @@ namespace SERG.Model
             serialNum = sNumber;
         }
 
+
+        public SERGForms(
+            //riskeval
+            out string sNumber,
+            out short fEval,
+            out short sEval,
+            out short btEval,
+            out short eEval,
+            out short pEval,
+            out short tsuEval,
+            out short tyEval,
+
+            //sereport
+            out string rEval,
+            out string rm,
+            out string desig,
+            out string haz,
+            out string sev,
+            out string endNum,
+            out bool lOrR,
+            out DateTime prepD,
+            out string titlePB,
+            out string namePB,
+            out string titleNB,
+            out string nameNB,
+
+            //whoisatrisk
+            out bool isFac,
+            out bool isStud,
+            out bool isPer,
+            out bool isEquip,
+
+            //actionbox and otehrs
+            out bool abRec,
+            out bool abSafety,
+            out string actVal,
+            out string detVal)
+        {
+
+            sNumber = serialNum;
+
+            //risk eval
+            fEval = fireEval;
+            sEval = smokeEval;
+            btEval = bombThreatEval;
+            eEval = earthquakeEval;
+            pEval = protestEval;
+            tsuEval = tsunamiEval;
+            tyEval = typhoonEval;
+
+            //sereport
+            rEval = riskEvaluation;
+            rm = room;
+            desig = designation;
+            haz = hazard;
+            sev = severity;
+            endNum = endorsementNum;
+            lOrR = labOrRoom;
+            prepD = prepDate;
+            titlePB = titlePreparedBy;
+            namePB = namePreparedBy;
+            titleNB = titleNotedBy;
+            nameNB = nameNotedBy;
+
+            //whoisatrisk
+            isFac = isFaculty; 
+            isStud = isStudents;
+            isPer = isPersonnel;
+            isEquip = isEquipment;
+
+            //actionboxandothers
+            abRec = abRectification;
+            abSafety = abSafetyPlan;
+            actVal = actionVal;
+            detVal = detailVal;
+
+
+
+        }
+
         public SERGForms(
             //riskeval
             string sNumber, 
@@ -175,7 +255,7 @@ namespace SERG.Model
             severity = sev;
             endorsementNum = endNum;
             labOrRoom = lOrR;
-            prepDate = prepDate;
+            prepDate = prepD;
             titlePreparedBy = titlePB;
             namePreparedBy = namePB;
             titleNotedBy = titleNB;

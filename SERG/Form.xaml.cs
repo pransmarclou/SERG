@@ -139,6 +139,11 @@ namespace SERG
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            if (txtSerialNumber.IsEnabled == true)
+                functionType = 0;
+            else
+                functionType = 1;
+
             if (functionType == 0) //addForms
             {
                 RiskEvalCheck(0,
@@ -186,7 +191,7 @@ namespace SERG
                 actVal = new TextRange(rtxtAction.Document.ContentStart, rtxtAction.Document.ContentEnd).Text;
                 detVal = new TextRange(rtxtDetails.Document.ContentStart, rtxtDetails.Document.ContentEnd).Text;
 
-                SERG.Model.SERGForms objSModel = new SERG.Model.SERGForms(
+                Model.SERGForms objSModel = new SERG.Model.SERGForms(
                     txtSerialNumber.Text,
 
                     fEval,
@@ -226,13 +231,12 @@ namespace SERG
 
             #region Controller
 
-            if (txtSerialNumber.IsEnabled == true)
-                functionType = 0;
-            else
-                functionType = 1;
+            
             SERG.Controller.SERGForms objSController = new Controller.SERGForms(functionType);
 
             #endregion
+
+
             MessageBoxResult question = System.Windows.MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(question == MessageBoxResult.Yes)
             {
