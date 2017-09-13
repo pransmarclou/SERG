@@ -209,8 +209,8 @@ namespace SERG
                     txtHazard.Text,
                     txtSeverity.Text,
                     txtEndorsement.Text,
-                    cmbClass.IsSelected, //if lab = 0, class = 1
-                    DateTime.Now.Date, //eugh since idk pa yung txtDatePrepared
+                    cmbClass.IsSelected, 
+                    txtDatePrepared.SelectedDate.Value,
                     txtPreparedTitle.Text,
                     txtPreparedName.Text,
                     txtNotedTitle.Text,
@@ -229,7 +229,10 @@ namespace SERG
 
                );
             }
+            else //edit forms
+            {
 
+            }
 
             MessageBoxResult question = System.Windows.MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(question == MessageBoxResult.Yes)

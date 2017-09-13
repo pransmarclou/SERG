@@ -120,7 +120,7 @@ namespace SERG.Model
         }
 
         
-
+        //ADD and EDIT forms
         public SERGForms(
             
             int functionType,
@@ -205,6 +205,18 @@ namespace SERG.Model
 
                 objController.AddForm();
             }
+            else if(funcType == 1)
+            {
+
+            }
+
+        }
+
+        public SERGForms(
+            string sNumber,
+            string nPreparedBy,
+            string nNotedBy)
+        {
 
         }
     }
