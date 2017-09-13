@@ -122,8 +122,18 @@ namespace SERG.Controller
         #endregion
 
 
+        //Constructors
 
-        //Constructor
+        public SERGForms()
+        {
+
+        }
+
+        public SERGForms(string sNumb)
+        {
+            serialNum = sNumb;
+        }
+
         public SERGForms(
             int functionType,
             string sNumber,
@@ -207,6 +217,9 @@ namespace SERG.Controller
 
         }
 
+
+        //Functions 
+
         public void AddForm()
         {
             try
@@ -262,12 +275,8 @@ namespace SERG.Controller
             }
         }
 
-        public SERGForms()
-        {
 
-        }
-
-       public DataTable ShowToDataGrid()
+        public DataTable ShowToDataGrid()
         {
 
             DataTable existingData = new DataTable("SEReport");
@@ -293,6 +302,41 @@ namespace SERG.Controller
 
             return existingData;
         }
+
+
+        public DataTable SelectedData()
+        {
+
+            DataTable dt = new DataTable("SelectedData");
+            try
+            {
+                SqlDataAdapter res = null;
+                using (SqlConnection sq_connect = new SqlConnection(cnString))
+                using (SqlCommand sq_command = new SqlCommand("SelectData", sq_connect))
+                {
+                    sq_command.CommandType = CommandType.StoredProcedure;
+                    sq_command.Parameters.Add("serialNumber", SqlDbType.VarChar).Value = serialNum;
+                    sq_connect.Open();
+
+                    res = new SqlDataAdapter(sq_command);
+                    res.Fill(dt);
+
+                    
+                    
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"The error is {ex}");
+            }
+
+            return dt;
+        }
+        
+
+        
         
 
         ////riskeval
