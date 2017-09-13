@@ -275,6 +275,31 @@ namespace SERG.Controller
             }
         }
 
+        public void DeleteForm()
+        {
+
+            try
+            {
+                using (SqlConnection sq_connect = new SqlConnection(cnString))
+                using (SqlCommand sq_command = new SqlCommand("DeleteForm", sq_connect))
+                {
+                    sq_command.CommandType = CommandType.StoredProcedure;
+                 
+                    sq_command.Parameters.Add("serialNumber", SqlDbType.VarChar).Value = serialNum;
+                 
+
+                    sq_connect.Open();
+                    sq_command.ExecuteScalar();
+
+                }
+
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The error is {ex}");
+            }
+        }
 
         public DataTable ShowToDataGrid()
         {

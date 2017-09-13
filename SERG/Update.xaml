@@ -103,7 +103,7 @@
             Margin="44,48,46,59"
             Background="AntiqueWhite"
             BorderBrush="AntiqueWhite"
-            BorderThickness="1">
+            BorderThickness="1" Click="btnDelete_Click">
             <Grid>
                 <Image
                     Height="60"

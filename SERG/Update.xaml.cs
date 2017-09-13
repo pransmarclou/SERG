@@ -258,11 +258,15 @@ namespace SERG
 
                 Form.Show();
                 Form.txtSerialNumber.IsEnabled = false;
+
+               // objController.ShowToDataGrid();
+
+                ShowingDataGrid();
                 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error: " + ex.Message,"Form Error",MessageBoxButton.OK,MessageBoxImage.Error);
 
             }
       
@@ -284,6 +288,38 @@ namespace SERG
             {
                 btnEdit.IsEnabled = false;
                 ShowingDataGrid();
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MessageBoxResult msgResult = MessageBox.Show("Do You Really Want To Delete The Item?", "Confirm Deletion", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (msgResult == MessageBoxResult.Yes)
+                {
+                    System.Data.DataRowView select = (System.Data.DataRowView)dgdData.SelectedItem;
+                    serialNumber = select.Row.ItemArray[0].ToString();
+
+
+                    Controller.SERGForms objController = new Controller.SERGForms(serialNumber);
+                    objController.DeleteForm();
+                    MessageBox.Show("You've Successfully Deleted the Item!", "Inventory", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    ShowingDataGrid();
+                }
+                else
+                {
+                    ShowingDataGrid();
+                }
+              
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message, "Form Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
