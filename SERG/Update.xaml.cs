@@ -29,17 +29,21 @@ namespace SERG
             {
                
                 InitializeMaterialDesign();
-
-                Controller.SERGForms objSERGForms = new Controller.SERGForms();
-                DataTable existingData = new DataTable("data");
-                existingData = objSERGForms.ShowToDataGrid();
-                dgdData.ItemsSource = existingData.DefaultView;
+                ShowingDataGrid();
                
             }
             catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void ShowingDataGrid()
+        {
+            Controller.SERGForms objSERGForms = new Controller.SERGForms();
+            DataTable existingData = new DataTable("data");
+            existingData = objSERGForms.ShowToDataGrid();
+            dgdData.ItemsSource = existingData.DefaultView;
         }
 
         private void InitializeMaterialDesign()

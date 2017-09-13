@@ -373,5 +373,11 @@ namespace SERG
 
 
         }
+
+        private void FormIsClosed(object sender, EventArgs e)
+        {
+            Update objUpdate = new Update();
+            objUpdate.ShowingDataGrid();
+        }
     }
 }
