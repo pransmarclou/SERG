@@ -56,6 +56,10 @@ namespace SERG
             cntControl.Content = new Form();            
             this.txbTitle.Text = "Add Form";
         }
-    
+
+        private void WindowClosed(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
