@@ -61,11 +61,13 @@
             Margin="176,35,575,33"
             materialDesign:HintAssist.Hint="Serial Number"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-        <TextBox
+
+        <DatePicker
             x:Name="txtDatePrepared"
-            Margin="29,35,69,33"
-            materialDesign:HintAssist.Hint="Date Prepared"
-            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            Margin="30,40,69,33"
+            materialDesign:HintAssist.Hint="Date Prepared"           
+            Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
+            />
 
         <ComboBox
             Grid.Row="1"
@@ -300,7 +302,7 @@
             x:Name="txtPreparedName"
             Grid.RowSpan="2"
             Grid.Column="2"
-            Margin="265,81,300,297"
+            Margin="265,75,300,297"
             materialDesign:HintAssist.Hint="Name"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         <Label
@@ -360,5 +362,6 @@
             Content="Action:"
             FontFamily="Popcorn"
             FontSize="18" />
+
     </Grid>
 </Window>
