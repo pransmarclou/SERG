@@ -40,8 +40,8 @@
             Grid.RowSpan="3"
             Grid.Column="2"
             Margin="5,26,24,29"
-            Background="#FFE8E4DF" Foreground="#DD1F1F1F">
-        </DataGrid>
+            Background="#FFE8E4DF"
+            Foreground="#DD1F1F1F" />
         <Button
             x:Name="btnAdd"
             Grid.Row="1"

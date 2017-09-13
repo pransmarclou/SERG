@@ -15,9 +15,7 @@ using System.Media;
 
 namespace SERG
 {
-    /// <summary>
-    /// Interaction logic for Invetorys.xaml
-    /// </summary>
+  
     public partial class Form
     {
        
@@ -174,6 +172,7 @@ namespace SERG
         
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            CheckTextFields();
             if (txtSerialNumber.IsEnabled == true)
                 functionType = 0;
             else
