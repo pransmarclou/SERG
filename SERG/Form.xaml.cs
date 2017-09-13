@@ -210,7 +210,7 @@ namespace SERG
                     txtSeverity.Text,
                     txtEndorsement.Text,
                     cmbClass.IsSelected, 
-                    txtDatePrepared.SelectedDate.Value,
+                    dpDatePrepared.SelectedDate.Value,
                     txtPreparedTitle.Text,
                     txtPreparedName.Text,
                     txtNotedTitle.Text,
@@ -302,7 +302,7 @@ namespace SERG
                 Range LabOrRoom = wordDoc.Bookmarks["LabOrRoom"].Range;
 
                 // Assign the values according to user input
-                Date.Text = txtDatePrepared.Text;
+                Date.Text = dpDatePrepared.Text;
                 SerialNumber.Text = txtSerialNumber.Text;
                 RE.Text = txtRe.Text;
 
