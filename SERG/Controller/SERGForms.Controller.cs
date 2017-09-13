@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using SERG.Model;
+using System.Windows.Documents;
 
 namespace SERG.Controller
 {
@@ -14,18 +15,15 @@ namespace SERG.Controller
     {
         //connection string
         private string cnString = ConfigurationManager.ConnectionStrings["cn_SERG"]?.ConnectionString;
-        private short fEval { get; set; }
-        
+       
+
+
 
         //Constructor
-        public SERGForms()
+        public SERGForms(int functionType)
         {
-            SERG.Form objForm = new SERG.Form();
-            SERG.Model.SERGForms objSModel = new SERG.Model.SERGForms(
-                objForm.txtDatePrepared.Text,
-                objForm.r
 
-           );
+           
         }
 
        

@@ -19,11 +19,93 @@ namespace SERG
     public partial class Form
     {
        
+        private int functionType { get; set; }
+        private short fEval { get; set; }
+        private short sEval { get; set; }
+        private short btEval { get; set; }
+        private short eEval { get; set; }
+        private short pEval { get; set; }
+        private short tsuEval { get; set; }
+        private short tyEval { get; set; }
+        private string actVal { get; set; }
+        private string detVal { get; set; }
+
+        private void RiskEvalCheck(int type, bool high, bool med, bool low, bool none)
+        {
+            if (high == true)
+            {
+                if (type == 0)
+                    fEval = 0;
+                else if (type == 1)
+                    sEval = 0;
+                else if (type == 2)
+                    btEval = 0;
+                else if (type == 3)
+                    eEval = 0;
+                else if (type == 4)
+                    pEval = 0;
+                else if (type == 5)
+                    tsuEval = 0;
+                else if (type == 6)
+                    tyEval = 0;
+            }
+            else if (med == true)
+            {
+                if (type == 0)
+                    fEval = 1;
+                else if (type == 1)
+                    sEval = 1;
+                else if (type == 2)
+                    btEval = 1;
+                else if (type == 3)
+                    eEval = 1;
+                else if (type == 4)
+                    pEval = 1;
+                else if (type == 5)
+                    tsuEval = 1;
+                else if (type == 6)
+                    tyEval = 1;
+            }
+            else if (low == true)
+            {
+                if (type == 0)
+                    fEval = 2;
+                else if (type == 1)
+                    sEval = 2;
+                else if (type == 2)
+                    btEval = 2;
+                else if (type == 3)
+                    eEval = 2;
+                else if (type == 4)
+                    pEval = 2;
+                else if (type == 5)
+                    tsuEval = 2;
+                else if (type == 6)
+                    tyEval = 2;
+            }
+            else if (none == true)
+            {
+                if (type == 0)
+                    fEval = 3;
+                else if (type == 1)
+                    sEval = 3;
+                else if (type == 2)
+                    btEval = 0;
+                else if (type == 3)
+                    eEval = 3;
+                else if (type == 4)
+                    pEval = 3;
+                else if (type == 5)
+                    tsuEval = 3;
+                else if (type == 6)
+                    tyEval = 3;
+            }
+        }
+
 
         public Form()
         {
             InitializeComponent();
-
             try
             {
                
@@ -57,6 +139,100 @@ namespace SERG
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            if (functionType == 0) //addForms
+            {
+                RiskEvalCheck(0,
+                    rdbRiskEval_Fire_High.IsChecked.Value,
+                    rdbRiskEval_Fire_Med.IsChecked.Value,
+                    rdbRiskEval_Fire_Low.IsChecked.Value,
+                    rdbRiskEval_Fire_NA.IsChecked.Value);
+
+                RiskEvalCheck(1,
+                    rdbRiskEval_Smoke_High.IsChecked.Value,
+                    rdbRiskEval_Smoke_Med.IsChecked.Value,
+                    rdbRiskEval_Smoke_Low.IsChecked.Value,
+                    rdbRiskEval_Smoke_NA.IsChecked.Value);
+
+                RiskEvalCheck(2,
+                    rdbRiskEval_Bomb_High.IsChecked.Value,
+                    rdbRiskEval_Bomb_Med.IsChecked.Value,
+                    rdbRiskEval_Bomb_Low.IsChecked.Value,
+                    rdbRiskEval_Bomb_NA.IsChecked.Value);
+
+                RiskEvalCheck(3,
+                    rdbRiskEval_Earthquake_High.IsChecked.Value,
+                    rdbRiskEval_Earthquake_Med.IsChecked.Value,
+                    rdbRiskEval_Earthquake_Low.IsChecked.Value,
+                    rdbRiskEval_Earthquake_NA.IsChecked.Value);
+
+                RiskEvalCheck(4,
+                    rdbRiskEval_Protest_High.IsChecked.Value,
+                    rdbRiskEval_Protest_Med.IsChecked.Value,
+                    rdbRiskEval_Protest_Low.IsChecked.Value,
+                    rdbRiskEval_Protest_NA.IsChecked.Value);
+
+                RiskEvalCheck(5,
+                    rdbRiskEval_Tsunami_High.IsChecked.Value,
+                    rdbRiskEval_Tsunami_Med.IsChecked.Value,
+                    rdbRiskEval_Tsunami_Low.IsChecked.Value,
+                    rdbRiskEval_Tsunami_NA.IsChecked.Value);
+
+                RiskEvalCheck(6,
+                    rdbRiskEval_Typhoon_High.IsChecked.Value,
+                    rdbRiskEval_Typhoon_Med.IsChecked.Value,
+                    rdbRiskEval_Typhoon_Low.IsChecked.Value,
+                    rdbRiskEval_Typhoon_NA.IsChecked.Value);
+
+                actVal = new TextRange(rtxtAction.Document.ContentStart, rtxtAction.Document.ContentEnd).Text;
+                detVal = new TextRange(rtxtDetails.Document.ContentStart, rtxtDetails.Document.ContentEnd).Text;
+
+                SERG.Model.SERGForms objSModel = new SERG.Model.SERGForms(
+                    txtSerialNumber.Text,
+
+                    fEval,
+                    sEval,
+                    btEval,
+                    eEval,
+                    pEval,
+                    tsuEval,
+                    tyEval,
+
+                    txtRe.Text,
+                    txtRoom.Text,
+                    txtDesignation.Text,
+                    txtHazard.Text,
+                    txtSeverity.Text,
+                    txtEndorsement.Text,
+                    cmbClass.IsSelected, //if lab = 0, class = 1
+                    DateTime.Now.Date, //eugh since idk pa yung txtDatePrepared
+                    txtPreparedTitle.Text,
+                    txtPreparedName.Text,
+                    txtNotedTitle.Text,
+                    txtNotedName.Text,
+
+                    chkFaculty.IsChecked.Value,
+                    chkStudents.IsChecked.Value,
+                    chkLabPersonel.IsChecked.Value,
+                    chkEquipment.IsChecked.Value,
+
+                    chkImmRec.IsChecked.Value,
+                    chkIncluSafety.IsChecked.Value,
+                    actVal,
+                    detVal
+
+               );
+            }
+
+
+            #region Controller
+
+            if (txtSerialNumber.IsEnabled == true)
+                functionType = 0;
+            else
+                functionType = 1;
+            SERG.Controller.SERGForms objSController = new Controller.SERGForms(functionType);
+
+            #endregion
             MessageBoxResult question = System.Windows.MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(question == MessageBoxResult.Yes)
             {

@@ -117,6 +117,7 @@ namespace SERG.Model
         {
             serialNum = sNumber;
         }
+
         public SERGForms(
             //riskeval
             string sNumber, 
