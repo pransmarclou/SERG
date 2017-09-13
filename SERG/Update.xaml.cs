@@ -7,6 +7,7 @@ using MaterialDesignThemes;
 using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
 using MahApps.Metro.Controls;
+using System.Data;
 
 namespace SERG
 {
@@ -28,6 +29,11 @@ namespace SERG
             {
                
                 InitializeMaterialDesign();
+
+                Controller.SERGForms objSERGForms = new Controller.SERGForms();
+                DataTable existingData = new DataTable("data");
+                existingData = objSERGForms.ShowToDataGrid();
+                dgdData.ItemsSource = existingData.DefaultView;
                
             }
             catch (System.Exception ex)
