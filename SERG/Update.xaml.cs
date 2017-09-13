@@ -48,7 +48,6 @@ namespace SERG
 
             dgdData.ItemsSource = null;
             dgdData.ItemsSource = existingData.DefaultView;
-            dgdData.Items.Refresh();
         }
 
         private void InitializeMaterialDesign()
