@@ -301,6 +301,66 @@ namespace SERG.Controller
             }
         }
 
+        public void EditForm()
+        {
+            try
+            {
+                using (SqlConnection sq_connect = new SqlConnection(cnString))
+                using (SqlCommand sq_command = new SqlCommand("UpdateForm", sq_connect))
+                {
+                    sq_command.CommandType = CommandType.StoredProcedure;
+                    sq_command.Parameters.Add("rE", SqlDbType.VarChar).Value = riskEvaluation;
+                    sq_command.Parameters.Add("room", SqlDbType.VarChar).Value = room;
+                    sq_command.Parameters.Add("designation", SqlDbType.VarChar).Value = designation;
+                    sq_command.Parameters.Add("serialNumber", SqlDbType.VarChar).Value = serialNum;
+                    sq_command.Parameters.Add("hazard", SqlDbType.VarChar).Value = hazard;
+                    sq_command.Parameters.Add("severity", SqlDbType.VarChar).Value = severity;
+                    sq_command.Parameters.Add("endorsementNum", SqlDbType.VarChar).Value = endorsementNum;
+                    sq_command.Parameters.Add("labOrRoom", SqlDbType.Bit).Value = labOrRoom;
+                    sq_command.Parameters.Add("prepDate", SqlDbType.Date).Value = prepDate;
+                    sq_command.Parameters.Add("tPrep", SqlDbType.VarChar).Value = titlePreparedBy;
+                    sq_command.Parameters.Add("tNoted", SqlDbType.VarChar).Value = titleNotedBy;
+                    sq_command.Parameters.Add("namePrep", SqlDbType.VarChar).Value = namePreparedBy;
+                    sq_command.Parameters.Add("nameNoted", SqlDbType.VarChar).Value = nameNotedBy;
+                    sq_command.Parameters.Add("remarks", SqlDbType.VarChar).Value = remarks;
+
+                    sq_command.Parameters.Add("fireEval", SqlDbType.SmallInt).Value = fireEval;
+                    sq_command.Parameters.Add("smokeEval", SqlDbType.SmallInt).Value = smokeEval;
+                    sq_command.Parameters.Add("bthreatEval", SqlDbType.SmallInt).Value = bombThreatEval;
+                    sq_command.Parameters.Add("earthquakeEval", SqlDbType.SmallInt).Value = earthquakeEval;
+                    sq_command.Parameters.Add("protestEval", SqlDbType.SmallInt).Value = protestEval;
+                    sq_command.Parameters.Add("tsunamiEval", SqlDbType.SmallInt).Value = tsunamiEval;
+                    sq_command.Parameters.Add("typhoonEval", SqlDbType.SmallInt).Value = typhoonEval;
+
+                    sq_command.Parameters.Add("isFaculty", SqlDbType.Bit).Value = isFaculty;
+                    sq_command.Parameters.Add("isStudents", SqlDbType.Bit).Value = isStudents;
+                    sq_command.Parameters.Add("isPersonnel", SqlDbType.Bit).Value = isPersonnel;
+                    sq_command.Parameters.Add("isEquipment", SqlDbType.Bit).Value = isEquipment;
+
+                    sq_command.Parameters.Add("abRectification", SqlDbType.Bit).Value = abRectification;
+                    sq_command.Parameters.Add("abSafetyPlan", SqlDbType.Bit).Value = abSafetyPlan;
+
+                    sq_command.Parameters.Add("actionVal", SqlDbType.VarChar).Value = actionVal;
+                    sq_command.Parameters.Add("detailVal", SqlDbType.VarChar).Value = detailVal;
+
+                    sq_connect.Open();
+                    sq_command.ExecuteScalar();
+
+                }
+
+                MessageBox.Show("Edited");
+
+
+                Update objUpdate = new Update();
+                objUpdate.dgdData.ItemsSource = null;
+                objUpdate.ShowingDataGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The error is {ex}");
+            }
+        }
+
         public DataTable ShowToDataGrid()
         {
 
