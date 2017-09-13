@@ -179,8 +179,6 @@ namespace SERG
             else
                 functionType = 1;
 
-            if (functionType == 0) //addForms
-            {
                 RiskEvalCheck(0,
                     rdbRiskEval_Fire_High.IsChecked.Value,
                     rdbRiskEval_Fire_Med.IsChecked.Value,
@@ -264,11 +262,6 @@ namespace SERG
                     
 
                );
-            }
-            else //edit forms
-            {
-
-            }
 
             MessageBoxResult question = System.Windows.MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(question == MessageBoxResult.Yes)
@@ -412,6 +405,7 @@ namespace SERG
         private void FormIsClosed(object sender, EventArgs e)
         {
             Update objUpdate = new Update();
+            objUpdate.dgdData.ItemsSource = null;
             objUpdate.ShowingDataGrid();
         }
     }
