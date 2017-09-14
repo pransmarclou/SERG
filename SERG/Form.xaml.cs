@@ -306,8 +306,8 @@ namespace SERG
                 Range RiskEval_Smoke_Low = wordDoc.Bookmarks["RiskEval_Smoke_Low"].Range;
                 Range RiskEval_Smoke_NA = wordDoc.Bookmarks["RiskEval_Smoke_NA"].Range;
                 Range RiskEval_Bomb_High = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
-                Range RiskEval_Bomb_Med = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
-                Range RiskEval_Bomb_Low = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
+                Range RiskEval_Bomb_Med = wordDoc.Bookmarks["RiskEval_Bomb_Med"].Range;
+                Range RiskEval_Bomb_Low = wordDoc.Bookmarks["RiskEval_Bomb_Low"].Range;
                 Range RiskEval_Bomb_NA = wordDoc.Bookmarks["RiskEval_Bomb_NA"].Range;
                 Range RiskEval_Earthquake_High = wordDoc.Bookmarks["RiskEval_Earthquake_High"].Range;
                 Range RiskEval_Earthquake_Med = wordDoc.Bookmarks["RiskEval_Earthquake_Med"].Range;
@@ -529,19 +529,19 @@ namespace SERG
                 Prep_Title.Text = txtPreparedTitle.Text;
                 Noted_Name.Text = txtNotedName.Text;
                 Noted_Title.Text = txtNotedTitle.Text;
-                LabOrRoom.Text = cmbLabOrRoom.SelectedValue.ToString().ToUpper();
+                LabOrRoom.Text = cmbLabOrRoom.SelectionBoxItem.ToString().ToUpper();
 
 
                 try
                 {
-                    if (File.Exists(Environment.SpecialFolder.DesktopDirectory + "//" + SerialNumber.Text + ".docx"))
+                    if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "//" + SerialNumber.Text + ".docx"))
                     {
                         MessageBoxResult fileExists = MessageBox.Show("The report with the same serial number already exists in your desktop. Would you like" +
                             "to overwrite the report, or create a differently named report?", "Caution", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
                         if (MessageBoxResult.Yes == fileExists)
                         {
-                            File.Delete(Environment.SpecialFolder.DesktopDirectory + "//" + SerialNumber.Text + ".docx");
-                            wordDoc.SaveAs2(Environment.SpecialFolder.DesktopDirectory + "//" + SerialNumber.Text + ".docx");
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "//" + SerialNumber.Text + ".docx");
+                            wordDoc.SaveAs2(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "//" + SerialNumber.Text + ".docx");
                             wordDoc.Close();
                             wordApp.Quit();
                         }
@@ -549,10 +549,16 @@ namespace SERG
                         {
                             Random randy = new Random();
                             int randnum = randy.Next() % 10000;
-                            wordDoc.SaveAs2(Environment.SpecialFolder.DesktopDirectory + "//" + SerialNumber.Text + "_" + randnum + ".docx");
+                            wordDoc.SaveAs2(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "//" + SerialNumber.Text + "_" + randnum + ".docx");
                             wordDoc.Close();
                             wordApp.Quit();
                         }
+                    }
+                    else
+                    {
+                        wordDoc.SaveAs2(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "//" + SerialNumber.Text + ".docx");
+                        wordDoc.Close();
+                        wordApp.Quit();
                     }
                     MessageBox.Show("The report file has been saved to your desktop!", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 }
