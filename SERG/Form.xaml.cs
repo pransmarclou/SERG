@@ -11,6 +11,7 @@ using Microsoft.Office.Interop.Word;
 //using System.Windows.Forms;
 using System.Windows.Documents;
 using System.Media;
+using System.IO;
 
 
 namespace SERG
@@ -262,7 +263,7 @@ namespace SERG
 
                );
 
-            }
+            
 
             MessageBoxResult question = MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(question == MessageBoxResult.Yes)
@@ -305,6 +306,8 @@ namespace SERG
                 Range RiskEval_Smoke_Low = wordDoc.Bookmarks["RiskEval_Smoke_Low"].Range;
                 Range RiskEval_Smoke_NA = wordDoc.Bookmarks["RiskEval_Smoke_NA"].Range;
                 Range RiskEval_Bomb_High = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
+                Range RiskEval_Bomb_Med = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
+                Range RiskEval_Bomb_Low = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
                 Range RiskEval_Bomb_NA = wordDoc.Bookmarks["RiskEval_Bomb_NA"].Range;
                 Range RiskEval_Earthquake_High = wordDoc.Bookmarks["RiskEval_Earthquake_High"].Range;
                 Range RiskEval_Earthquake_Med = wordDoc.Bookmarks["RiskEval_Earthquake_Med"].Range;
