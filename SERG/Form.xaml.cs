@@ -10,13 +10,12 @@ using MahApps.Metro.Controls;
 using Microsoft.Office.Interop.Word;
 //using System.Windows.Forms;
 using System.Windows.Documents;
-using System.IO;
+using System.Media;
+
 
 namespace SERG
 {
-    /// <summary>
-    /// Interaction logic for Invetorys.xaml
-    /// </summary>
+  
     public partial class Form
     {
        
@@ -138,15 +137,47 @@ namespace SERG
             this.Close();
         }
 
+        private void CheckTextFields()
+        {
+            actVal = new TextRange(rtxtAction.Document.ContentStart, rtxtAction.Document.ContentEnd).Text;
+            detVal = new TextRange(rtxtDetails.Document.ContentStart, rtxtDetails.Document.ContentEnd).Text;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtDesignation.Text) && 
+                    string.IsNullOrWhiteSpace(txtEndorsement.Text) &&
+                    string.IsNullOrWhiteSpace(txtHazard.Text) &&
+                    string.IsNullOrWhiteSpace(txtNotedName.Text) &&
+                    string.IsNullOrWhiteSpace(txtNotedTitle.Text) &&
+                    string.IsNullOrWhiteSpace(txtPreparedName.Text) &&
+                    string.IsNullOrWhiteSpace(txtPreparedTitle.Text) &&
+                    string.IsNullOrWhiteSpace(txtRe.Text) && 
+                    string.IsNullOrWhiteSpace(txtRemarks.Text) &&
+                    string.IsNullOrWhiteSpace(txtRoom.Text) &&
+                    string.IsNullOrWhiteSpace(txtSerialNumber.Text) &&
+                    string.IsNullOrWhiteSpace(txtSeverity.Text) &&
+                    string.IsNullOrWhiteSpace(actVal) &&
+                    string.IsNullOrWhiteSpace(detVal) )
+                {
+                   throw new Exception("Please Complete The Required Details!");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                SystemSounds.Beep.Play();
+                System.Windows.MessageBox.Show("Error: " + ex.Message, "Empty TextFields", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
+        
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            CheckTextFields();
             if (txtSerialNumber.IsEnabled == true)
                 functionType = 0;
             else
                 functionType = 1;
 
-            if (functionType == 0) //addForms
-            {
                 RiskEvalCheck(0,
                     rdbRiskEval_Fire_High.IsChecked.Value,
                     rdbRiskEval_Fire_Med.IsChecked.Value,
@@ -230,9 +261,6 @@ namespace SERG
                     
 
                );
-            }
-            else //edit forms
-            {
 
             }
 
@@ -256,7 +284,7 @@ namespace SERG
                 //Create ranges for the bookmarks.
                 Range Date = wordDoc.Bookmarks["Date"].Range;
                 Range SerialNumber = wordDoc.Bookmarks["SerialNumber"].Range;
-                Range RE = wordDoc.Bookmarks["RE"].Range;0
+                Range RE = wordDoc.Bookmarks["RE"].Range;
                 Range Action_Immediate = wordDoc.Bookmarks["Action_Immediate"].Range;
                 Range Action_Inclusion = wordDoc.Bookmarks["Action_Inclusion"].Range;
                 Range Room = wordDoc.Bookmarks["Room"].Range;
@@ -277,8 +305,6 @@ namespace SERG
                 Range RiskEval_Smoke_Low = wordDoc.Bookmarks["RiskEval_Smoke_Low"].Range;
                 Range RiskEval_Smoke_NA = wordDoc.Bookmarks["RiskEval_Smoke_NA"].Range;
                 Range RiskEval_Bomb_High = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
-                Range RiskEval_Bomb_Med = wordDoc.Bookmarks["RiskEval_Bomb_Med"].Range;
-                Range RiskEval_Bomb_Low = wordDoc.Bookmarks["RiskEval_Bomb_Low"].Range;
                 Range RiskEval_Bomb_NA = wordDoc.Bookmarks["RiskEval_Bomb_NA"].Range;
                 Range RiskEval_Earthquake_High = wordDoc.Bookmarks["RiskEval_Earthquake_High"].Range;
                 Range RiskEval_Earthquake_Med = wordDoc.Bookmarks["RiskEval_Earthquake_Med"].Range;
@@ -542,6 +568,13 @@ namespace SERG
             }
 
 
+        }
+
+        private void FormIsClosed(object sender, EventArgs e)
+        {
+            Update objUpdate = new Update();
+            objUpdate.dgdData.ItemsSource = null;
+            objUpdate.ShowingDataGrid();
         }
     }
 }

@@ -138,6 +138,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,12 +148,16 @@
     <None Include="Word\template.docx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <Resource Include="Images\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
