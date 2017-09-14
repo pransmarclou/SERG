@@ -270,10 +270,10 @@ namespace SERG
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message,"Form Error",MessageBoxButton.OK,MessageBoxImage.Error);
-
+                ShowingDataGrid();
             }
-      
-           
+            ShowingDataGrid();
+
         }
 
         private void DataGridSelectionChanged(object sender, SelectionChangedEventArgs e)
