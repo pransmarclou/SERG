@@ -8,9 +8,10 @@ using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
 using MahApps.Metro.Controls;
 using Microsoft.Office.Interop.Word;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Windows.Documents;
 using System.Media;
+using System.IO;
 
 
 namespace SERG
@@ -262,7 +263,9 @@ namespace SERG
 
                );
 
-            MessageBoxResult question = System.Windows.MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            
+
+            MessageBoxResult question = MessageBox.Show("Do you want to create a word document file?", "Printable Copy", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(question == MessageBoxResult.Yes)
             {
                 Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
@@ -270,12 +273,12 @@ namespace SERG
                 Document wordDoc = wordApp.Documents.Open(filepath);
                 wordDoc.Activate();
 
-                var dialog = new System.Windows.Forms.FolderBrowserDialog();
-                //Set default directory to the desktop.
-                dialog.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-                dialog.Description = "Please choose the folder where the file will be saved (default location is the desktop)";
-                dialog.RootFolder = Environment.SpecialFolder.Personal;
-                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                //var dialog = new System.Windows.Forms.FolderBrowserDialog();
+                ////Set default directory to the desktop.
+                //dialog.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                //dialog.Description = "Please choose the folder where the file will be saved (default location is the desktop)";
+                //dialog.RootFolder = Environment.SpecialFolder.Personal;
+                //System.Windows.Forms.DialogResult result = dialog.ShowDialog();
                 
                 
 
@@ -303,6 +306,8 @@ namespace SERG
                 Range RiskEval_Smoke_Low = wordDoc.Bookmarks["RiskEval_Smoke_Low"].Range;
                 Range RiskEval_Smoke_NA = wordDoc.Bookmarks["RiskEval_Smoke_NA"].Range;
                 Range RiskEval_Bomb_High = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
+                Range RiskEval_Bomb_Med = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
+                Range RiskEval_Bomb_Low = wordDoc.Bookmarks["RiskEval_Bomb_High"].Range;
                 Range RiskEval_Bomb_NA = wordDoc.Bookmarks["RiskEval_Bomb_NA"].Range;
                 Range RiskEval_Earthquake_High = wordDoc.Bookmarks["RiskEval_Earthquake_High"].Range;
                 Range RiskEval_Earthquake_Med = wordDoc.Bookmarks["RiskEval_Earthquake_Med"].Range;
@@ -371,7 +376,152 @@ namespace SERG
                 Severity.Text = txtSeverity.Text;
                 EndorsementNumber.Text = txtEndorsement.Text;
 
-                //ADD THE RISK EVAL RESULTS LATER
+                if (rdbRiskEval_Fire_High.IsChecked.Value)
+                    RiskEval_Fire_High.Text = "☒";
+                else
+                    RiskEval_Fire_High.Text = "☐";
+
+                if (rdbRiskEval_Fire_Med.IsChecked.Value)
+                    RiskEval_Fire_Med.Text = "☒";
+                else
+                    RiskEval_Fire_Med.Text = "☐";
+
+                if (rdbRiskEval_Fire_Low.IsChecked.Value)
+                    RiskEval_Fire_Low.Text = "☒";
+                else
+                    RiskEval_Fire_Low.Text = "☐";
+
+                if (rdbRiskEval_Fire_NA.IsChecked.Value)
+                    RiskEval_Fire_NA.Text = "☒";
+                else
+                    RiskEval_Fire_NA.Text = "☐";
+
+
+                if (rdbRiskEval_Smoke_High.IsChecked.Value)
+                    RiskEval_Smoke_High.Text = "☒";
+                else
+                    RiskEval_Smoke_High.Text = "☐";
+
+                if (rdbRiskEval_Smoke_Med.IsChecked.Value)
+                    RiskEval_Smoke_Med.Text = "☒";
+                else
+                    RiskEval_Smoke_Med.Text = "☐";
+
+                if (rdbRiskEval_Smoke_Low.IsChecked.Value)
+                    RiskEval_Smoke_Low.Text = "☒";
+                else
+                    RiskEval_Smoke_Low.Text = "☐";
+
+                if (rdbRiskEval_Smoke_NA.IsChecked.Value)
+                    RiskEval_Smoke_NA.Text = "☒";
+                else
+                    RiskEval_Smoke_NA.Text = "☐";
+
+
+                if (rdbRiskEval_Bomb_High.IsChecked.Value)
+                    RiskEval_Bomb_High.Text = "☒";
+                else
+                    RiskEval_Bomb_High.Text = "☐";
+
+                if (rdbRiskEval_Bomb_Med.IsChecked.Value)
+                    RiskEval_Bomb_Med.Text = "☒";
+                else
+                    RiskEval_Bomb_Med.Text = "☐";
+
+                if (rdbRiskEval_Bomb_Low.IsChecked.Value)
+                    RiskEval_Bomb_Low.Text = "☒";
+                else
+                    RiskEval_Bomb_Low.Text = "☐";
+
+                if (rdbRiskEval_Bomb_NA.IsChecked.Value)
+                    RiskEval_Bomb_NA.Text = "☒";
+                else
+                    RiskEval_Bomb_NA.Text = "☐";
+
+
+                if (rdbRiskEval_Earthquake_High.IsChecked.Value)
+                    RiskEval_Earthquake_High.Text = "☒";
+                else
+                    RiskEval_Earthquake_High.Text = "☐";
+
+                if (rdbRiskEval_Earthquake_Med.IsChecked.Value)
+                    RiskEval_Earthquake_Med.Text = "☒";
+                else
+                    RiskEval_Earthquake_Med.Text = "☐";
+
+                if (rdbRiskEval_Earthquake_Low.IsChecked.Value)
+                    RiskEval_Earthquake_Low.Text = "☒";
+                else
+                    RiskEval_Earthquake_Low.Text = "☐";
+
+                if (rdbRiskEval_Earthquake_NA.IsChecked.Value)
+                    RiskEval_Earthquake_NA.Text = "☒";
+                else
+                    RiskEval_Earthquake_NA.Text = "☐";
+
+
+                if (rdbRiskEval_Protest_High.IsChecked.Value)
+                    RiskEval_Protest_High.Text = "☒";
+                else
+                    RiskEval_Protest_High.Text = "☐";
+
+                if (rdbRiskEval_Protest_Med.IsChecked.Value)
+                    RiskEval_Protest_Med.Text = "☒";
+                else
+                    RiskEval_Protest_Med.Text = "☐";
+
+                if (rdbRiskEval_Protest_Low.IsChecked.Value)
+                    RiskEval_Protest_Low.Text = "☒";
+                else
+                    RiskEval_Protest_Low.Text = "☐";
+
+                if (rdbRiskEval_Protest_NA.IsChecked.Value)
+                    RiskEval_Protest_NA.Text = "☒";
+                else
+                    RiskEval_Protest_NA.Text = "☐";
+
+
+                if (rdbRiskEval_Tsunami_High.IsChecked.Value)
+                    RiskEval_Tsunami_High.Text = "☒";
+                else
+                    RiskEval_Tsunami_High.Text = "☐";
+
+                if (rdbRiskEval_Tsunami_Med.IsChecked.Value)
+                    RiskEval_Tsunami_Med.Text = "☒";
+                else
+                    RiskEval_Tsunami_Med.Text = "☐";
+
+                if (rdbRiskEval_Tsunami_Low.IsChecked.Value)
+                    RiskEval_Tsunami_Low.Text = "☒";
+                else
+                    RiskEval_Tsunami_Low.Text = "☐";
+
+                if (rdbRiskEval_Tsunami_NA.IsChecked.Value)
+                    RiskEval_Tsunami_NA.Text = "☒";
+                else
+                    RiskEval_Tsunami_NA.Text = "☐";
+
+
+                if (rdbRiskEval_Typhoon_High.IsChecked.Value)
+                    RiskEval_Typhoon_High.Text = "☒";
+                else
+                    RiskEval_Typhoon_High.Text = "☐";
+
+                if (rdbRiskEval_Typhoon_Med.IsChecked.Value)
+                    RiskEval_Typhoon_Med.Text = "☒";
+                else
+                    RiskEval_Typhoon_Med.Text = "☐";
+
+                if (rdbRiskEval_Typhoon_Low.IsChecked.Value)
+                    RiskEval_Typhoon_Low.Text = "☒";
+                else
+                    RiskEval_Typhoon_Low.Text = "☐";
+
+                if (rdbRiskEval_Typhoon_NA.IsChecked.Value)
+                    RiskEval_Typhoon_NA.Text = "☒";
+                else
+                    RiskEval_Typhoon_NA.Text = "☐";
+
 
                 Details.Text = new TextRange(rtxtDetails.Document.ContentStart, rtxtDetails.Document.ContentEnd).Text;
                 Action.Text = new TextRange(rtxtAction.Document.ContentStart, rtxtAction.Document.ContentEnd).Text;
@@ -379,17 +529,39 @@ namespace SERG
                 Prep_Title.Text = txtPreparedTitle.Text;
                 Noted_Name.Text = txtNotedName.Text;
                 Noted_Title.Text = txtNotedTitle.Text;
+                LabOrRoom.Text = cmbLabOrRoom.SelectedValue.ToString().ToUpper();
+
+
+                try
+                {
+                    if (File.Exists(Environment.SpecialFolder.DesktopDirectory + "//" + SerialNumber.Text + ".docx"))
+                    {
+                        MessageBoxResult fileExists = MessageBox.Show("The report with the same serial number already exists in your desktop. Would you like" +
+                            "to overwrite the report, or create a differently named report?", "Caution", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                        if (MessageBoxResult.Yes == fileExists)
+                        {
+                            File.Delete(Environment.SpecialFolder.DesktopDirectory + "//" + SerialNumber.Text + ".docx");
+                            wordDoc.SaveAs2(Environment.SpecialFolder.DesktopDirectory + "//" + SerialNumber.Text + ".docx");
+                            wordDoc.Close();
+                            wordApp.Quit();
+                        }
+                        else
+                        {
+                            Random randy = new Random();
+                            int randnum = randy.Next() % 10000;
+                            wordDoc.SaveAs2(Environment.SpecialFolder.DesktopDirectory + "//" + SerialNumber.Text + "_" + randnum + ".docx");
+                            wordDoc.Close();
+                            wordApp.Quit();
+                        }
+                    }
+                    MessageBox.Show("The report file has been saved to your desktop!", "Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+                catch(IOException)
+                {
+                    MessageBox.Show("Please close the current report", "Error", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
                 
-                //ADD THE LAB OR ROOM TEXT;
-
-                //RiskEval_Bomb_High.Text = "☐";  // USE FOR UNCHECKED TEXTBOX
-                //RiskEval_Earthquake_High.Text = "☒"; // USE FOR CHECKED TEXTBOX
-
-
-
-                wordDoc.SaveAs2(dialog.SelectedPath + "//" + SerialNumber.Text + ".docx"); 
-                wordDoc.Close();
-                wordApp.Quit();
+               
                 
                 // rng.Text = "Adams Laura"; //Get value from any where      
             }
