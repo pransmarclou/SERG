@@ -256,7 +256,7 @@ namespace SERG
                 //Create ranges for the bookmarks.
                 Range Date = wordDoc.Bookmarks["Date"].Range;
                 Range SerialNumber = wordDoc.Bookmarks["SerialNumber"].Range;
-                Range RE = wordDoc.Bookmarks["RE"].Range;
+                Range RE = wordDoc.Bookmarks["RE"].Range;0
                 Range Action_Immediate = wordDoc.Bookmarks["Action_Immediate"].Range;
                 Range Action_Inclusion = wordDoc.Bookmarks["Action_Inclusion"].Range;
                 Range Room = wordDoc.Bookmarks["Room"].Range;
@@ -500,7 +500,7 @@ namespace SERG
                 Prep_Title.Text = txtPreparedTitle.Text;
                 Noted_Name.Text = txtNotedName.Text;
                 Noted_Title.Text = txtNotedTitle.Text;
-                LabOrRoom.Text = cmbLabOrRoom.SelectedValue.ToString();
+                LabOrRoom.Text = cmbLabOrRoom.SelectedValue.ToString().ToUpper();
 
 
                 try
