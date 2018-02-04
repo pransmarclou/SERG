@@ -42,7 +42,7 @@ namespace SERG
 
         public void ShowingDataGrid()
         {
-            Controller.SERGForms objSERGForms = new Controller.SERGForms();
+           Helper objSERGForms = new Helper();
             DataTable existingData = new DataTable("data");
             existingData = objSERGForms.ShowToDataGrid();
 
@@ -82,7 +82,7 @@ namespace SERG
         {
             try
             {
-                Controller.SERGForms objController = new Controller.SERGForms(serialNumber);
+               Helper objController = new Helper(serialNumber);
                 DataTable data = new DataTable("SelectedData");
                 data = objController.SelectedData();
                 Form = new Form();
@@ -306,7 +306,7 @@ namespace SERG
                     serialNumber = select.Row.ItemArray[0].ToString();
 
 
-                    Controller.SERGForms objController = new Controller.SERGForms(serialNumber);
+                   Helper objController = new Helper(serialNumber);
                     objController.DeleteForm();
                     MessageBox.Show("You've Successfully Deleted the Item!", "Inventory", MessageBoxButton.OK, MessageBoxImage.Information);
 

@@ -102,11 +102,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controller\SERGForms.Controller.cs" />
+    <Compile Include="App_Code\Helper.cs" />
     <Compile Include="Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\SERGForms.Model.cs" />
+    <Compile Include="Model\SERGForms.cs" />
     <Compile Include="Update.xaml.cs">
       <DependentUpon>Update.xaml</DependentUpon>
     </Compile>

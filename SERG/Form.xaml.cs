@@ -224,7 +224,7 @@ namespace SERG
                 actVal = new TextRange(rtxtAction.Document.ContentStart, rtxtAction.Document.ContentEnd).Text;
                 detVal = new TextRange(rtxtDetails.Document.ContentStart, rtxtDetails.Document.ContentEnd).Text;
 
-                Model.SERGForms objSModel = new SERG.Model.SERGForms(
+               SERGForms objSModel = new SERGForms(
                     functionType,
                     txtSerialNumber.Text,
 

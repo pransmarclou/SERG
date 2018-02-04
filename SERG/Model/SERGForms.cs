@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
-namespace SERG.Model
+namespace SERG
 {
     class SERGForms
     {
@@ -205,13 +205,13 @@ namespace SERG.Model
             
             if(funcType == 0)
             {
-                Controller.SERGForms objController = new Controller.SERGForms(funcType, serialNum, fireEval, smokeEval, bombThreatEval, earthquakeEval, protestEval, tsunamiEval, typhoonEval, riskEvaluation, room, designation, hazard, severity, endorsementNum, labOrRoom, prepDate, titlePreparedBy, namePreparedBy, titleNotedBy, nameNotedBy, remarks, isFaculty, isStudents, isPersonnel, isEquipment, abRectification, abSafetyPlan, actionVal, detailVal);
+               Helper objController = new Helper(funcType, serialNum, fireEval, smokeEval, bombThreatEval, earthquakeEval, protestEval, tsunamiEval, typhoonEval, riskEvaluation, room, designation, hazard, severity, endorsementNum, labOrRoom, prepDate, titlePreparedBy, namePreparedBy, titleNotedBy, nameNotedBy, remarks, isFaculty, isStudents, isPersonnel, isEquipment, abRectification, abSafetyPlan, actionVal, detailVal);
 
                 objController.AddForm();
             }
             else if(funcType == 1)
             {
-                Controller.SERGForms objController = new Controller.SERGForms(funcType, serialNum, fireEval, smokeEval, bombThreatEval, earthquakeEval, protestEval, tsunamiEval, typhoonEval, riskEvaluation, room, designation, hazard, severity, endorsementNum, labOrRoom, prepDate, titlePreparedBy, namePreparedBy, titleNotedBy, nameNotedBy, remarks, isFaculty, isStudents, isPersonnel, isEquipment, abRectification, abSafetyPlan, actionVal, detailVal);
+                Helper objController = new Helper(funcType, serialNum, fireEval, smokeEval, bombThreatEval, earthquakeEval, protestEval, tsunamiEval, typhoonEval, riskEvaluation, room, designation, hazard, severity, endorsementNum, labOrRoom, prepDate, titlePreparedBy, namePreparedBy, titleNotedBy, nameNotedBy, remarks, isFaculty, isStudents, isPersonnel, isEquipment, abRectification, abSafetyPlan, actionVal, detailVal);
 
                 objController.EditForm();
             }

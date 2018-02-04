@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-using SERG.Model;
+using SERG;
 using System.Windows.Documents;
 using System.Windows;
 
-namespace SERG.Controller
+namespace SERG
 {
-    class SERGForms
+    class Helper
     {
         //connection string
         private string cnString = ConfigurationManager.ConnectionStrings["cn_SERG"]?.ConnectionString;
@@ -124,17 +124,17 @@ namespace SERG.Controller
 
         //Constructors
 
-        public SERGForms()
+        public Helper()
         {
 
         }
 
-        public SERGForms(string sNumb)
+        public Helper(string sNumb)
         {
             serialNum = sNumb;
         }
 
-        public SERGForms(
+        public Helper(
             int functionType,
             string sNumber,
 
